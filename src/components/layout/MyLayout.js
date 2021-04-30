@@ -15,7 +15,7 @@ const MyLayout = ({ children }) => {
       >
         <Link to="/">
           <div className="logo">
-            <img src={logo} alt="Holidaze logo" width={150} />
+            <img src={logo} alt="Holidaze logo" width={140} />
           </div>
         </Link>
         <div>
@@ -35,7 +35,9 @@ const MyLayout = ({ children }) => {
           </Link>
         </div>
         <button className="logbutton">
-          <Link to="/login">Log in</Link>
+          <Link className="loglink" to="/login">
+            Log in
+          </Link>
         </button>
       </Header>
       <Content style={{ padding: "0 50px", backgroundColor: "#ffffff" }}>

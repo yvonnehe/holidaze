@@ -10,6 +10,10 @@ h1 {
   font-size: 40px;
 }
 
+h2 {
+  font-weight: 400;
+}
+
 .logbutton {
   background-color: #e7eef5;
   border: none;
@@ -19,4 +23,8 @@ h1 {
   margin: 20px 0px;
   position: relative;
   line-height: normal;
+}
+
+.loglink {
+  //font-size: 13px;
 }
