@@ -1,4 +1,4 @@
-import { Layout, Menu } from "antd";
+import { Layout } from "antd";
 import { Link } from "react-router-dom";
 import logo from "../../images/Holidaze-white-logo.svg";
 const { Header, Footer, Content } = Layout;
@@ -20,16 +20,23 @@ const MyLayout = ({ children }) => {
         </Link>
         <div>
           <Link
+            className="link"
             style={{ color: "#ffffff", padding: "0px 25px" }}
             to="/places-to-stay"
           >
             Places to stay
           </Link>
-          <Link style={{ color: "#ffffff", padding: "0px 25px" }} to="/contact">
+          <Link
+            className="link"
+            style={{ color: "#ffffff", padding: "0px 25px" }}
+            to="/contact"
+          >
             Contact us
           </Link>
         </div>
-        <Link to="/login">Log in</Link>
+        <button className="logbutton">
+          <Link to="/login">Log in</Link>
+        </button>
       </Header>
       <Content style={{ padding: "0 50px", backgroundColor: "#ffffff" }}>
         <div className="site-layout-content"> {children}</div>
