@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Hotels from "./pages/Hotels";
+import Places from "./pages/Places";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
@@ -10,16 +10,16 @@ import "./sass/main.scss";
 function App() {
   return (
     <>
-      <MyLayout>
-        <Router>
-          <Switch>
+      <Router>
+        <Switch>
+          <MyLayout>
             <Route path="/" exact component={Home} />
-            <Route path="/hotels" exact component={Hotels} />
+            <Route path="/places-to-stay" exact component={Places} />
             <Route path="/contact" exact component={Contact} />
             <Route path="/login" exact component={Login} />
-          </Switch>
-        </Router>
-      </MyLayout>
+          </MyLayout>
+        </Switch>
+      </Router>
     </>
   );
 }
