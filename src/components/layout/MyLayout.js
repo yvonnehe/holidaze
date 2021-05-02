@@ -40,7 +40,7 @@ const MyLayout = ({ children }) => {
           </Link>
         </button>
       </Header>
-      <Content style={{ padding: "0 50px", backgroundColor: "#ffffff" }}>
+      <Content style={{ padding: "40px 50px", backgroundColor: "#ffffff" }}>
         <div className="site-layout-content"> {children}</div>
       </Content>
       <Footer style={{ textAlign: "center", backgroundColor: "#E7EEF5" }}>

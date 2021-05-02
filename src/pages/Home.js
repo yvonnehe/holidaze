@@ -1,11 +1,11 @@
-import Hero from "../components/Hero";
+import Favorites from "../components/Favorites";
 import HomeLayout from "../components/layout/HomeLayout";
 
 const Home = () => {
   return (
     <>
       <HomeLayout>
-        <p>stuff here</p>
+        <Favorites />
       </HomeLayout>
     </>
   );
