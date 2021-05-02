@@ -1,10 +1,12 @@
 import Hero from "../components/Hero";
+import HomeLayout from "../components/layout/HomeLayout";
 
 const Home = () => {
   return (
     <>
-      <h1>Your Bergen adventure begins here</h1>
-      <Hero />
+      <HomeLayout>
+        <h1>Your Bergen adventure begins here</h1>
+      </HomeLayout>
     </>
   );
 };

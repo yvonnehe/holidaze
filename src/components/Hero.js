@@ -1,42 +1,42 @@
-import { Carousel, Radio } from "antd";
-import { useState } from "react";
+import { Carousel } from "antd";
+import HeroImg1 from "../images/mao-yuqing.jpg";
+import HeroImg2 from "../images/sharon-christina-rorvik.jpg";
+import HeroImg3 from "../images/solveig-smordal-botn.jpg";
+import HeroText from "./HeroText";
 
 const contentStyle = {
-  height: "160px",
   color: "#fff",
   lineHeight: "160px",
-  textAlign: "center",
-  background: "#364d79",
+  textAlign: "right",
+  position: "relative",
 };
 
 const Hero = () => {
-  const [dotPosition, setDotPosition] = useState("top");
-
-  const handlePositionChange = ({ target: { value } }) => {
-    setDotPosition(value);
-  };
-
   return (
     <>
-      <Radio.Group
-        onChange={handlePositionChange}
-        value={dotPosition}
-        style={{ marginBottom: 8 }}
+      <Carousel
+        autoplay
+        effect="fade"
+        dotPosition={"left"}
+        style={{ marginTop: "-67px" }}
       >
-        <Radio.Button value="top">Top</Radio.Button>
-        <Radio.Button value="bottom">Bottom</Radio.Button>
-        <Radio.Button value="left">Left</Radio.Button>
-        <Radio.Button value="right">Right</Radio.Button>
-      </Radio.Group>
-      <Carousel dotPosition={dotPosition}>
         <div>
-          <h3 style={contentStyle}>1</h3>
+          <img src={HeroImg1} alt="Bergen aero view" width="100%" />
+          <h3 style={contentStyle}>
+            <HeroText />
+          </h3>
         </div>
         <div>
-          <h3 style={contentStyle}>2</h3>
+          <img src={HeroImg2} alt="Bergen aero view" width="100%" />
+          <h3 style={contentStyle}>
+            <HeroText />
+          </h3>
         </div>
         <div>
-          <h3 style={contentStyle}>3</h3>
+          <img src={HeroImg3} alt="Bergen aero view" width="100%" />
+          <h3 style={contentStyle}>
+            <HeroText />
+          </h3>
         </div>
       </Carousel>
     </>

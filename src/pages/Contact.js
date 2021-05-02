@@ -2,16 +2,13 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Heading from "../components/Heading";
+import MyLayout from "../components/layout/MyLayout";
 
 const schema = yup.object().shape({
-  firstName: yup
+  name: yup
     .string()
-    .required("Please enter your first name")
-    .min(3, "Your full first name please"),
-  lastName: yup
-    .string()
-    .required("Please enter your last name")
-    .min(4, "Your full last name please"),
+    .required("Please enter your name")
+    .min(3, "Your name please"),
   email: yup
     .string()
     .required()
@@ -39,55 +36,49 @@ const Contact = () => {
 
   return (
     <>
-      <Heading heading="Contact" />
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label>
-          First name
+      <MyLayout>
+        <Heading heading="Contact us" />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <label>
+            Name
+            <br></br>
+            <input name="name" ref={register} />
+          </label>
           <br></br>
-          <input name="firstName" ref={register} />
-        </label>
-        <br></br>
-        {errors.firstName && <span>{errors.firstName.message}</span>}
+          {errors.name && <span>{errors.name.message}</span>}
 
-        <label>
-          Last name
+          <label>
+            E-mail
+            <br></br>
+            <input name="email" ref={register} />
+          </label>
           <br></br>
-          <input name="lastName" ref={register} />
-        </label>
-        <br></br>
-        {errors.lastName && <span>{errors.lastName.message}</span>}
+          {errors.email && <span>{errors.email.message}</span>}
 
-        <label>
-          E-mail
+          <label>
+            What is this regarding?
+            <br></br>
+            <select name="subject" ref={register}>
+              <option value="cats">Sending cat pics</option>
+              <option value="dogs">Sending dog pics</option>
+              <option value="hello">Just want to say hi</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
           <br></br>
-          <input name="email" ref={register} />
-        </label>
-        <br></br>
-        {errors.email && <span>{errors.email.message}</span>}
+          {errors.subject && <span>{errors.subject.message}</span>}
 
-        <label>
-          Subject
+          <label>
+            Your message
+            <br></br>
+            <input name="message" ref={register} />
+          </label>
           <br></br>
-          <select name="subject" ref={register}>
-            <option value="cats">Sending cat pics</option>
-            <option value="dogs">Sending dog pics</option>
-            <option value="hello">Just want to say hi</option>
-            <option value="other">Other</option>
-          </select>
-        </label>
-        <br></br>
-        {errors.subject && <span>{errors.subject.message}</span>}
+          {errors.message && <span>{errors.message.message}</span>}
 
-        <label>
-          Your message
-          <br></br>
-          <input name="message" ref={register} />
-        </label>
-        <br></br>
-        {errors.message && <span>{errors.message.message}</span>}
-
-        <button type="submit">Submit</button>
-      </form>
+          <button type="submit">Submit</button>
+        </form>
+      </MyLayout>
     </>
   );
 };

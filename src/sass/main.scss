@@ -23,6 +23,9 @@ h2 {
   margin: 20px 0px;
   position: relative;
   line-height: normal;
+  &--blue {
+    background-color: #2a384c;
+  }
 }
 
 .loglink {

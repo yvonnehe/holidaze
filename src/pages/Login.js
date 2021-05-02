@@ -7,6 +7,7 @@ import axios from "axios";
 import Heading from "../components/Heading";
 import AuthContext from "../context/AuthContext";
 import { useHistory } from "react-router-dom";
+import MyLayout from "../components/layout/MyLayout";
 
 const Login = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -40,22 +41,32 @@ const Login = () => {
 
   return (
     <>
-      <Heading heading="Login" />
-      <form onSubmit={handleSubmit(onSubmit)}>
-        {loginError && <p>{loginError}</p>}
-        <fieldset disabled={submitting}>
-          <div>
-            <input name="identifier" placeholder="username" ref={register} />
-            <br></br>
-            {errors.identifier && <p>{errors.identifier.message}</p>}
-            <input name="password" placeholder="password" ref={register} />
-            {errors.password && <p>{errors.password.message}</p>}
-          </div>
-          <button onClick={login} type="submit">
-            {submitting ? "Logging in..." : "Login"}
-          </button>
-        </fieldset>
-      </form>
+      <MyLayout>
+        <Heading heading="Log in as admin" />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {loginError && <p>{loginError}</p>}
+          <fieldset disabled={submitting}>
+            <div>
+              <label>
+                Username
+                <br></br>
+                <input name="username" ref={register} />
+              </label>
+              <br></br>
+              {errors.username && <span>{errors.username.message}</span>}
+              <label>
+                Password
+                <br></br>
+                <input name="password" ref={register} />
+              </label>
+              {errors.password && <p>{errors.password.message}</p>}
+            </div>
+            <button onClick={login} type="submit">
+              {submitting ? "Logging in..." : "Login"}
+            </button>
+          </fieldset>
+        </form>
+      </MyLayout>
     </>
   );
 };

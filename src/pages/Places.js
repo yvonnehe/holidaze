@@ -1,7 +1,11 @@
+import MyLayout from "../components/layout/MyLayout";
+
 const Places = () => {
   return (
     <>
-      <h2>Places to stay</h2>
+      <MyLayout>
+        <h2>Places to stay</h2>
+      </MyLayout>
     </>
   );
 };

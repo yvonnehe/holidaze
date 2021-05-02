@@ -12,12 +12,10 @@ function App() {
     <>
       <Router>
         <Switch>
-          <MyLayout>
-            <Route path="/" exact component={Home} />
-            <Route path="/places-to-stay" exact component={Places} />
-            <Route path="/contact" exact component={Contact} />
-            <Route path="/login" exact component={Login} />
-          </MyLayout>
+          <Route path="/" exact component={Home} />
+          <Route path="/places-to-stay" exact component={Places} />
+          <Route path="/contact" exact component={Contact} />
+          <Route path="/login" exact component={Login} />
         </Switch>
       </Router>
     </>
