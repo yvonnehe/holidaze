@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <HomeLayout>
-        <h1>Your Bergen adventure begins here</h1>
+        <p>stuff here</p>
       </HomeLayout>
     </>
   );

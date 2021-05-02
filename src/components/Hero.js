@@ -6,9 +6,12 @@ import HeroText from "./HeroText";
 
 const contentStyle = {
   color: "#fff",
-  lineHeight: "160px",
   textAlign: "right",
-  position: "relative",
+  position: "absolute",
+  bottom: "10%",
+  right: "50px",
+  width: "60%",
+  lineHeight: "55px",
 };
 
 const Hero = () => {
