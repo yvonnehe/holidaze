@@ -37,7 +37,7 @@ const HomeLayout = ({ children }) => {
           </Link>
         </div>
         <button className="logbutton logbutton--blue">
-          <Link className="loglink" to="/login">
+          <Link className="loglink--light" to="/login">
             Log in
           </Link>
         </button>

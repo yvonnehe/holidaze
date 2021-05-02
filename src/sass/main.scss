@@ -29,5 +29,8 @@ h2 {
 }
 
 .loglink {
-  //font-size: 13px;
+  color: #2a384c;
+  &--light {
+    color: #e7eef5;
+  }
 }
