@@ -35,3 +35,23 @@ h2 {
     color: #e7eef5;
   }
 }
+
+input,
+select,
+textarea {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+select {
+  padding: 5px;
+}
+
+.formbutton {
+  background-color: #2a384c;
+  border: none;
+  width: 50%;
+  color: #fff;
+  padding: 5px;
+  margin-top: 10px;
+}

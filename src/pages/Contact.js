@@ -76,7 +76,9 @@ const Contact = () => {
           <br></br>
           {errors.message && <span>{errors.message.message}</span>}
 
-          <button type="submit">Submit</button>
+          <button className="formbutton" type="submit">
+            Submit
+          </button>
         </form>
       </MyLayout>
     </>

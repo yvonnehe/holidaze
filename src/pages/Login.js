@@ -61,7 +61,7 @@ const Login = () => {
               </label>
               {errors.password && <p>{errors.password.message}</p>}
             </div>
-            <button onClick={login} type="submit">
+            <button className="formbutton" onClick={login} type="submit">
               {submitting ? "Logging in..." : "Login"}
             </button>
           </fieldset>
