@@ -1,10 +1,11 @@
 import MyLayout from "../components/layout/MyLayout";
+import Heading from "../components/Heading";
 
 const Shotel = () => {
   return (
     <>
       <MyLayout>
-        <h2>Specific hotel</h2>
+        <Heading heading="Specific hotel" />
       </MyLayout>
     </>
   );
