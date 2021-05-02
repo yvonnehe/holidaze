@@ -50,7 +50,7 @@ const Places = () => {
             <div key={hotel.id} className="hoteldiv">
               <p>{hotel.symbol}</p>
               <p>{hotel.name}</p>
-              <Link to={`/detail/${hotel.id}`}>
+              <Link to={`/places-to-stay/${hotel.id}`}>
                 <button>Read more</button>
               </Link>
             </div>
