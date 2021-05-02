@@ -3,7 +3,6 @@ import Places from "./pages/Places";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
-import MyLayout from "./components/layout/MyLayout";
 import "antd/dist/antd.css";
 import "./sass/main.scss";
 
