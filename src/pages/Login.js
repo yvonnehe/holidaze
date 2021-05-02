@@ -42,30 +42,32 @@ const Login = () => {
   return (
     <>
       <MyLayout>
-        <Heading heading="Log in as admin" />
-        <form onSubmit={handleSubmit(onSubmit)}>
-          {loginError && <p>{loginError}</p>}
-          <fieldset disabled={submitting}>
-            <div>
-              <label>
-                Username
+        <div className="formdiv">
+          <Heading heading="Log in as admin" />
+          <form onSubmit={handleSubmit(onSubmit)}>
+            {loginError && <p>{loginError}</p>}
+            <fieldset disabled={submitting}>
+              <div>
+                <label>
+                  Username
+                  <br></br>
+                  <input name="username" ref={register} />
+                </label>
                 <br></br>
-                <input name="username" ref={register} />
-              </label>
-              <br></br>
-              {errors.username && <span>{errors.username.message}</span>}
-              <label>
-                Password
-                <br></br>
-                <input name="password" ref={register} />
-              </label>
-              {errors.password && <p>{errors.password.message}</p>}
-            </div>
-            <button className="formbutton" onClick={login} type="submit">
-              {submitting ? "Logging in..." : "Login"}
-            </button>
-          </fieldset>
-        </form>
+                {errors.username && <span>{errors.username.message}</span>}
+                <label>
+                  Password
+                  <br></br>
+                  <input name="password" ref={register} />
+                </label>
+                {errors.password && <p>{errors.password.message}</p>}
+              </div>
+              <button className="formbutton" onClick={login} type="submit">
+                {submitting ? "Logging in..." : "Login"}
+              </button>
+            </fieldset>
+          </form>
+        </div>
       </MyLayout>
     </>
   );

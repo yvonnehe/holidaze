@@ -37,49 +37,51 @@ const Contact = () => {
   return (
     <>
       <MyLayout>
-        <Heading heading="Contact us" />
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label>
-            Name
+        <div className="formdiv">
+          <Heading heading="Contact us" />
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <label>
+              Name
+              <br></br>
+              <input name="name" ref={register} />
+            </label>
             <br></br>
-            <input name="name" ref={register} />
-          </label>
-          <br></br>
-          {errors.name && <span>{errors.name.message}</span>}
+            {errors.name && <span>{errors.name.message}</span>}
 
-          <label>
-            E-mail
+            <label>
+              E-mail
+              <br></br>
+              <input name="email" ref={register} />
+            </label>
             <br></br>
-            <input name="email" ref={register} />
-          </label>
-          <br></br>
-          {errors.email && <span>{errors.email.message}</span>}
+            {errors.email && <span>{errors.email.message}</span>}
 
-          <label>
-            What is this regarding?
+            <label>
+              What is this regarding?
+              <br></br>
+              <select name="subject" ref={register}>
+                <option value="cats">Sending cat pics</option>
+                <option value="dogs">Sending dog pics</option>
+                <option value="hello">Just want to say hi</option>
+                <option value="other">Other</option>
+              </select>
+            </label>
             <br></br>
-            <select name="subject" ref={register}>
-              <option value="cats">Sending cat pics</option>
-              <option value="dogs">Sending dog pics</option>
-              <option value="hello">Just want to say hi</option>
-              <option value="other">Other</option>
-            </select>
-          </label>
-          <br></br>
-          {errors.subject && <span>{errors.subject.message}</span>}
+            {errors.subject && <span>{errors.subject.message}</span>}
 
-          <label>
-            Your message
+            <label>
+              Your message
+              <br></br>
+              <input name="message" ref={register} />
+            </label>
             <br></br>
-            <input name="message" ref={register} />
-          </label>
-          <br></br>
-          {errors.message && <span>{errors.message.message}</span>}
+            {errors.message && <span>{errors.message.message}</span>}
 
-          <button className="formbutton" type="submit">
-            Submit
-          </button>
-        </form>
+            <button className="formbutton" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
       </MyLayout>
     </>
   );
