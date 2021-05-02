@@ -1,9 +1,19 @@
 import { Layout } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import logo from "../../images/Holidaze-white-logo.svg";
+import { useContext } from "react";
+import AuthContext from "../../context/AuthContext";
 const { Header, Footer, Content } = Layout;
 
 const MyLayout = ({ children }) => {
+  const [auth, setAuth] = useContext(AuthContext);
+  const history = useHistory();
+
+  function logout() {
+    setAuth(null);
+    history.push("/");
+  }
+
   return (
     <Layout className="layout">
       <Header
@@ -34,11 +44,33 @@ const MyLayout = ({ children }) => {
             Contact us
           </Link>
         </div>
-        <button className="logbutton">
-          <Link className="loglink" to="/login">
-            Log in
-          </Link>
-        </button>
+        {auth ? (
+          <>
+            <Link
+              className="link"
+              style={{ color: "#ffffff", padding: "0px 25px" }}
+              to="/enquiries"
+            >
+              Enquiries
+            </Link>
+            <Link
+              className="link"
+              style={{ color: "#ffffff", padding: "0px 25px" }}
+              to="/addhotel"
+            >
+              Add new hotels
+            </Link>
+            <button className="logbutton" onClick={logout}>
+              Log out
+            </button>
+          </>
+        ) : (
+          <button className="logbutton" onClick={logout}>
+            <Link className="loglink" to="/login">
+              Log in
+            </Link>
+          </button>
+        )}
       </Header>
       <Content style={{ padding: "40px 50px", backgroundColor: "#ffffff" }}>
         <div className="site-layout-content"> {children}</div>
