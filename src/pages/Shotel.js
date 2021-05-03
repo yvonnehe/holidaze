@@ -46,11 +46,11 @@ const Shotel = () => {
     <>
       <MyLayout>
         <Heading heading="Specific hotel" />
-        <p>{hotel.symbol}</p>
         <p>{hotel.name}</p>
-        <p>{hotel.description.en}</p>
-        <p>Current price: {hotel.market_data.current_price.nok} NOK</p>
-        <img src={hotel.image.small} alt="coin" />
+        <p>{hotel.shortdescription}</p>
+        <p>{hotel.description}</p>
+        <p>Current price: {hotel.price} NOK</p>
+        <img src={hotel.img} alt="hotel" />
       </MyLayout>
     </>
   );

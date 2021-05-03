@@ -36,7 +36,7 @@ const Login = () => {
   };
 
   function login() {
-    history.push("/admin");
+    history.push("/enquiries");
   }
 
   return (

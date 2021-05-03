@@ -13,7 +13,7 @@ const Places = () => {
   useEffect(() => {
     const fetchHotels = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/list`);
+        const response = await axios.get(`${BASE_URL}`);
         console.log(response.data);
         setHotels(response.data);
       } catch (error) {
@@ -48,7 +48,7 @@ const Places = () => {
         {hotels.map((hotel) => {
           return (
             <div key={hotel.id} className="hoteldiv">
-              <p>{hotel.symbol}</p>
+              <p>{hotel.shortdescription}</p>
               <p>{hotel.name}</p>
               <Link to={`/places-to-stay/${hotel.id}`}>
                 <button>Read more</button>
