@@ -40,22 +40,39 @@ const Contact = () => {
         <div className="formdiv">
           <Heading heading="Contact us" />
           <form onSubmit={handleSubmit(onSubmit)}>
-            <label>
-              Name
-              <br></br>
-              <input name="name" ref={register} />
-            </label>
-            <br></br>
-            {errors.name && <span>{errors.name.message}</span>}
+            <div
+              style={{
+                display: "inline-block",
+                width: "50%",
+                paddingRight: "2.5%",
+                marginBottom: "-20px",
+              }}
+            >
+              <label>
+                Name
+                <br></br>
+                <input name="name" ref={register} />
+              </label>
+              {errors.name && <span>{errors.name.message}</span>}
+            </div>
 
-            <label>
-              E-mail
-              <br></br>
-              <input name="email" ref={register} />
-            </label>
+            <div
+              style={{
+                display: "inline-block",
+                width: "50%",
+                paddingLeft: "2.5%",
+                marginBottom: "-20px",
+              }}
+            >
+              <label>
+                E-mail
+                <br></br>
+                <input name="email" ref={register} />
+              </label>
+              {errors.email && <span>{errors.email.message}</span>}
+            </div>
             <br></br>
-            {errors.email && <span>{errors.email.message}</span>}
-
+            <br></br>
             <label>
               What is this regarding?
               <br></br>
