@@ -6,6 +6,21 @@ import axios from "axios";
 import { BASE_URL } from "../utils/constants";
 import { DatePicker, Space } from "antd";
 import { Input, InputNumber } from "antd";
+import { useForm, Controller } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+const schema = yup.object().shape({
+  guests: yup.number().required(),
+  date: yup
+    .array()
+    .of(
+      yup.object().shape({
+        _d: yup.date("this is not a valid date"),
+      })
+    )
+    .required(),
+});
 
 const Shotel = () => {
   const { id } = useParams();
@@ -13,6 +28,16 @@ const Shotel = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { RangePicker } = DatePicker;
+
+  //form
+  const { register, handleSubmit, errors, control } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  function onSubmit(data) {
+    console.log(data);
+  }
+  console.log(errors);
 
   useEffect(() => {
     const fetchHotel = async () => {
@@ -59,25 +84,46 @@ const Shotel = () => {
         <br></br>
 
         <p>{hotel.price} NOK per night</p>
-        <div className="site-input-group-wrapper" style={{ width: "30%" }}>
-          <Space direction="vertical" size={12}>
-            <RangePicker />
-          </Space>
-          <Input.Group compact>
-            <Input
-              style={{ width: "60%", height: "42px" }}
-              defaultValue="Number of guests"
-            />
-            <InputNumber
-              style={{ width: "24%" }}
-              min={1}
-              max={99}
-              defaultValue={2}
-              onChange={onChange}
-            />
-          </Input.Group>
-          <button>Book now</button>
-        </div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="site-input-group-wrapper" style={{ width: "30%" }}>
+            <Space direction="vertical" size={12}>
+              <Controller
+                as={RangePicker}
+                options={{ name: "data" }}
+                control={control}
+                name="date"
+                onChange={([selected]) => {
+                  return { value: selected };
+                }}
+                defaultValue={{}}
+              />
+            </Space>
+            {errors.date && <span>{errors.date.message}</span>}
+            <Input.Group compact>
+              <Input
+                style={{ width: "60%", height: "42px" }}
+                defaultValue="Number of guests"
+              />
+              <InputNumber
+                style={{ width: "24%" }}
+                min={1}
+                max={999}
+                defaultValue={2}
+                onChange={onChange}
+                name="guests"
+                ref={register}
+              />
+            </Input.Group>
+            {errors.guests && <span>{errors.guests.message}</span>}
+            <button
+              className="formbutton"
+              type="Submit"
+              style={{ width: "84%" }}
+            >
+              Book now
+            </button>
+          </div>
+        </form>
       </MyLayout>
     </>
   );
