@@ -5,3 +5,19 @@
 .hotelinfo {
   color: inherit;
 }
+
+.filter {
+  border: none;
+  border-bottom: 1px solid #2a384c;
+}
+
+.filterdiv {
+  width: 150px;
+  padding-top: 10px;
+}
+
+.titlesearch {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}

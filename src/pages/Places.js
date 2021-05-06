@@ -46,13 +46,18 @@ const Places = () => {
     return (
       <>
         <MyLayout>
-          <Heading heading="Places to stay" />
-          <input
-            className="filter"
-            type="text"
-            name="query"
-            onChange={handleFiltering}
-          />
+          <div className="titlesearch">
+            <Heading heading="Places to stay" />
+            <div className="filterdiv">
+              <input
+                className="filter"
+                type="text"
+                name="query"
+                onChange={handleFiltering}
+                placeholder="Search..."
+              />
+            </div>
+          </div>
           {filteredHotels.map((hotel) => {
             return (
               <div key={hotel.id} className="hoteldiv">
@@ -116,13 +121,18 @@ const Places = () => {
   return (
     <>
       <MyLayout>
-        <Heading heading="Places to stay" />
-        <input
-          className="filter"
-          type="text"
-          name="query"
-          onChange={handleFiltering}
-        />
+        <div className="titlesearch">
+          <Heading heading="Places to stay" />
+          <div className="filterdiv">
+            <input
+              className="filter"
+              type="text"
+              name="query"
+              onChange={handleFiltering}
+              placeholder="Search..."
+            />
+          </div>
+        </div>
         {hotels.map((hotel) => {
           return (
             <div key={hotel.id} className="hoteldiv">
