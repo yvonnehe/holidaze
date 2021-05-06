@@ -61,7 +61,7 @@ const Places = () => {
           {filteredHotels.map((hotel) => {
             return (
               <div key={hotel.id} className="hoteldiv">
-                <Row>
+                <Row gutter={[16, 16]}>
                   <Col sm={24} lg={9}>
                     <div>
                       <img
@@ -77,11 +77,14 @@ const Places = () => {
                       to={`/places-to-stay/${hotel.id}`}
                       className="hotelinfo"
                     >
-                      <p>{hotel.shortdescription}</p>
-                      <h3>{hotel.name}</h3>
-                      <hr></hr>
-                      <p>{hotel.extras}</p>
-                      <p>{hotel.distance}km from Bergen city centre</p>
+                      <p className="text">{hotel.shortdescription}</p>
+                      <h3 className="name biggertext">{hotel.name}</h3>
+                      <hr className="line"></hr>
+                      <br></br>
+                      <p className="text">{hotel.extras}</p>
+                      <p className="text">
+                        {hotel.distance}km from Bergen city centre
+                      </p>
                     </Link>
                   </Col>
                   <Col sm={24} lg={4}>
@@ -89,8 +92,8 @@ const Places = () => {
                       to={`/places-to-stay/${hotel.id}`}
                       className="hotelinfo"
                     >
-                      <p>{hotel.price} NOK</p>
-                      <p>Per night including taxes</p>
+                      <p className="price biggertext">{hotel.price} NOK</p>
+                      <p className="taxes text">Per night including taxes</p>
                     </Link>
                   </Col>
                 </Row>
@@ -136,7 +139,7 @@ const Places = () => {
         {hotels.map((hotel) => {
           return (
             <div key={hotel.id} className="hoteldiv">
-              <Row>
+              <Row gutter={[16, 16]}>
                 <Col sm={24} lg={9}>
                   <div>
                     <img
@@ -152,11 +155,14 @@ const Places = () => {
                     to={`/places-to-stay/${hotel.id}`}
                     className="hotelinfo"
                   >
-                    <p>{hotel.shortdescription}</p>
-                    <h3>{hotel.name}</h3>
-                    <hr></hr>
-                    <p>{hotel.extras}</p>
-                    <p>{hotel.distance}km from Bergen city centre</p>
+                    <p className="text">{hotel.shortdescription}</p>
+                    <h3 className="name biggertext">{hotel.name}</h3>
+                    <hr className="line"></hr>
+                    <br></br>
+                    <p className="text">{hotel.extras}</p>
+                    <p className="text">
+                      {hotel.distance}km from Bergen city centre
+                    </p>
                   </Link>
                 </Col>
                 <Col sm={24} lg={4}>
@@ -164,8 +170,8 @@ const Places = () => {
                     to={`/places-to-stay/${hotel.id}`}
                     className="hotelinfo"
                   >
-                    <p>{hotel.price} NOK</p>
-                    <p>Per night including taxes</p>
+                    <p className="price biggertext">{hotel.price} NOK</p>
+                    <p className="taxes text">Per night including taxes</p>
                   </Link>
                 </Col>
               </Row>

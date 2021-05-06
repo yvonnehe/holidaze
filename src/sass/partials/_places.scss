@@ -1,5 +1,8 @@
 .hoteldiv {
   max-width: 100%;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #2a384c;
 }
 
 .hotelinfo {
@@ -20,4 +23,32 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
+}
+
+.biggertext {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.line {
+  width: 40px;
+  float: left;
+  border: none;
+  height: 0.5px;
+  background-color: #2a384c;
+}
+
+.name {
+}
+
+.price {
+  text-align: right;
+}
+
+.taxes {
+  text-align: right;
+}
+
+.text {
+  font-size: 16px;
 }
