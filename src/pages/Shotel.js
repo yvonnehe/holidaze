@@ -107,7 +107,7 @@ const Shotel = () => {
               <InputNumber
                 style={{ width: "24%" }}
                 min={1}
-                max={999}
+                max={99}
                 defaultValue={2}
                 onChange={onChange}
                 name="guests"
