@@ -77,9 +77,9 @@ const Contact = () => {
               What is this regarding?
               <br></br>
               <select name="subject" ref={register}>
-                <option value="cats">Sending cat pics</option>
-                <option value="dogs">Sending dog pics</option>
-                <option value="hello">Just want to say hi</option>
+                <option value="cats">Booking</option>
+                <option value="dogs">Cancellation</option>
+                <option value="hello">Activities</option>
                 <option value="other">Other</option>
               </select>
             </label>
@@ -89,7 +89,7 @@ const Contact = () => {
             <label>
               Your message
               <br></br>
-              <input name="message" ref={register} />
+              <textarea name="message" ref={register} />
             </label>
             <br></br>
             {errors.message && <span>{errors.message.message}</span>}
