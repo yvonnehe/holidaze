@@ -65,7 +65,7 @@ const MyLayout = ({ children }) => {
             </button>
           </>
         ) : (
-          <button className="logbutton" onClick={logout}>
+          <button className="logbutton">
             <Link className="loglink" to="/login">
               Log in
             </Link>
