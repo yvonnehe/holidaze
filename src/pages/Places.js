@@ -78,10 +78,10 @@ const Places = () => {
                       className="hotelinfo"
                     >
                       <p className="text">{hotel.shortdescription}</p>
-                      <h3 className="name biggertext">{hotel.name}</h3>
+                      <h3 className="biggertext">{hotel.name}</h3>
                       <hr className="line"></hr>
                       <br></br>
-                      <p className="text">{hotel.extras}</p>
+                      <p className="extras text">{hotel.extras}</p>
                       <p className="text">
                         {hotel.distance}km from Bergen city centre
                       </p>
@@ -107,17 +107,21 @@ const Places = () => {
 
   if (loading) {
     return (
-      <div>
-        <p>The content is loading... Please hold on.</p>
-      </div>
+      <MyLayout>
+        <div>
+          <p>The content is loading... Please hold on.</p>
+        </div>
+      </MyLayout>
     );
   }
 
   if (error) {
     return (
-      <div>
-        <p>There has been an error. We apologize for the inconvenience.</p>
-      </div>
+      <MyLayout>
+        <div>
+          <p>There has been an error. We apologize for the inconvenience.</p>
+        </div>
+      </MyLayout>
     );
   }
 
@@ -156,10 +160,10 @@ const Places = () => {
                     className="hotelinfo"
                   >
                     <p className="text">{hotel.shortdescription}</p>
-                    <h3 className="name biggertext">{hotel.name}</h3>
+                    <h3 className="biggertext">{hotel.name}</h3>
                     <hr className="line"></hr>
                     <br></br>
-                    <p className="text">{hotel.extras}</p>
+                    <p className="extras text">{hotel.extras}</p>
                     <p className="text">
                       {hotel.distance}km from Bergen city centre
                     </p>

@@ -56,17 +56,21 @@ const Shotel = () => {
 
   if (loading) {
     return (
-      <div>
-        <p>The content is loading... Please hold on.</p>
-      </div>
+      <MyLayout>
+        <div>
+          <p>The content is loading... Please hold on.</p>
+        </div>
+      </MyLayout>
     );
   }
 
   if (error) {
     return (
-      <div>
-        <p>There has been an error. We apologize for the inconvenience.</p>
-      </div>
+      <MyLayout>
+        <div>
+          <p>There has been an error. We apologize for the inconvenience.</p>
+        </div>
+      </MyLayout>
     );
   }
 
