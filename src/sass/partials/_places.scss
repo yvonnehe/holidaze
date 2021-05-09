@@ -24,7 +24,7 @@
 
 .filterdiv {
   width: 150px;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
 .titlesearch {
@@ -60,4 +60,11 @@
 
 .extras {
   margin-top: 10px;
+}
+
+@media screen and (max-width: 575px) {
+  .price,
+  .taxes {
+    text-align: left;
+  }
 }
