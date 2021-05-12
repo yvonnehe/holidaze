@@ -31,7 +31,7 @@ const Enquiries = () => {
       }
     };
     fetchContacts();
-  });
+  }, []);
 
   if (loading) {
     return (
@@ -41,9 +41,7 @@ const Enquiries = () => {
         </div>
       </MyLayout>
     );
-  }
-
-  if (error) {
+  } else if (error) {
     return (
       <MyLayout>
         <div>
@@ -51,27 +49,30 @@ const Enquiries = () => {
         </div>
       </MyLayout>
     );
-  }
+  } else {
+    return (
+      <>
+        <MyLayout>
+          <Heading heading="Bookings" />
+          <Heading heading="Enquries" />
+          {contacts.map((contact) => {
+            console.log(contact);
 
-  return (
-    <>
-      <MyLayout>
-        <Heading heading="Bookings" />
-        <Heading heading="Enquries" />
-        {contacts.map((contact) => {
-          return (
-            <div key={contact.id} className="contactcon">
-              <p>{contact.name}</p>
-              <p>{contact.email}</p>
-              <p>{contact.subject}</p>
-              <p>{contact.message}</p>
-              <hr className="line"></hr>
-            </div>
-          );
-        })}
-      </MyLayout>
-    </>
-  );
+            return (
+              <div key={contact.id} className="contactcon">
+                <p>{contact.Name}</p>
+                <p>{contact.Email}</p>
+                <p>{contact.Subject}</p>
+                <p>{contact.Message}</p>
+                <hr className="line"></hr>
+                <br></br>
+              </div>
+            );
+          })}
+        </MyLayout>
+      </>
+    );
+  }
 };
 
 export default Enquiries;
