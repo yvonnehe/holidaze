@@ -9,22 +9,19 @@ import { CONTACT_URL } from "../utils/constants";
 import axios from "axios";
 
 const schema = yup.object().shape({
-  name: yup
+  Name: yup
     .string()
     .required("Please enter your name")
     .min(3, "Your name please"),
-  email: yup
+  Email: yup
     .string()
     .required()
     .matches(
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       "Please enter a valid email address"
     ),
-  subject: yup
-    .string()
-    .required()
-    .oneOf(["cats", "dogs", "hello", "other"], "Please choose an option"),
-  message: yup.string().required().min(3, "Write a full message please"),
+  Subject: yup.string().required(),
+  Message: yup.string().required().min(3, "Write a full message please"),
 });
 
 const Contact = () => {
@@ -47,10 +44,11 @@ const Contact = () => {
     console.log(data);
 
     try {
-      const response = await axios.post(`${CONTACT_URL}`, data);
-      console.log("response", response.data);
-      setContact(response.data);
-      setSuccess(true);
+      await axios.post(`${CONTACT_URL}`, data).then((response) => {
+        console.log(response);
+        setContact(response);
+        setSuccess(true);
+      });
     } catch (error) {
       console.log("error", error);
       setPostError(error.toString());
@@ -80,9 +78,9 @@ const Contact = () => {
                 <label>
                   Name
                   <br></br>
-                  <input name="name" ref={register} />
+                  <input name="Name" ref={register} />
                 </label>
-                {errors.name && <span>{errors.name.message}</span>}
+                {errors.Name && <span>{errors.Name.message}</span>}
               </div>
 
               <div
@@ -96,16 +94,21 @@ const Contact = () => {
                 <label>
                   E-mail
                   <br></br>
-                  <input name="email" ref={register} />
+                  <input name="Email" ref={register} />
                 </label>
-                {errors.email && <span>{errors.email.message}</span>}
+                {errors.Email && <span>{errors.Email.message}</span>}
               </div>
               <br></br>
               <br></br>
               <label>
                 What is this regarding?
                 <br></br>
-                <select name="subject" ref={register}>
+                <select
+                  name="Subject"
+                  ref={register}
+                  defaultChecked="booking"
+                  defaultValue="booking"
+                >
                   <option value="booking">Booking</option>
                   <option value="cancellation">Cancellation</option>
                   <option value="activities">Activities</option>
@@ -113,15 +116,15 @@ const Contact = () => {
                 </select>
               </label>
               <br></br>
-              {errors.subject && <span>{errors.subject.message}</span>}
+              {errors.Subject && <span>{errors.Subject.message}</span>}
 
               <label>
                 Your message
                 <br></br>
-                <textarea name="message" ref={register} />
+                <textarea name="Message" ref={register} />
               </label>
               <br></br>
-              {errors.message && <span>{errors.message.message}</span>}
+              {errors.Message && <span>{errors.Message.message}</span>}
 
               <button className="formbutton" type="submit">
                 Submit
