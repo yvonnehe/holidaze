@@ -45,6 +45,10 @@ textarea {
   margin-bottom: 10px;
 }
 
+input[type="number"] {
+  border: inherit;
+}
+
 select {
   padding: 5px;
 }
