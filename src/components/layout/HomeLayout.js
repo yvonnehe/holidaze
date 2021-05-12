@@ -62,12 +62,16 @@ const HomeLayout = ({ children }) => {
             >
               Add new hotels
             </Link>
-            <button className="logbutton logbutton--blue" onClick={logout}>
+            <button
+              className="logbutton logbutton--blue"
+              onClick={logout}
+              type="button"
+            >
               Log out
             </button>
           </>
         ) : (
-          <button className="logbutton logbutton--blue">
+          <button className="logbutton logbutton--blue" type="button">
             <Link className="loglink--light" to="/login">
               Log in
             </Link>
