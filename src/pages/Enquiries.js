@@ -10,7 +10,7 @@ const Enquiries = () => {
   const [auth] = useContext(AuthContext);
   const history = useHistory();
 
-  const [contact, setContact] = useState([]);
+  const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -19,18 +19,18 @@ const Enquiries = () => {
   }
 
   useEffect(() => {
-    const fetchContact = async () => {
+    const fetchContacts = async () => {
       try {
         const response = await axios.get(`${CONTACT_URL}`);
         console.log(response);
-        setContact(response.data);
+        setContacts(response.data);
       } catch (error) {
         setError(error.toString());
       } finally {
         setLoading(false);
       }
     };
-    fetchContact();
+    fetchContacts();
   });
 
   if (loading) {
@@ -58,11 +58,14 @@ const Enquiries = () => {
       <MyLayout>
         <Heading heading="Bookings" />
         <Heading heading="Enquries" />
-        {contact.map((contact) => {
+        {contacts.map((contact) => {
           return (
             <div key={contact.id} className="contactcon">
               <p>{contact.name}</p>
               <p>{contact.email}</p>
+              <p>{contact.subject}</p>
+              <p>{contact.message}</p>
+              <hr className="line"></hr>
             </div>
           );
         })}
