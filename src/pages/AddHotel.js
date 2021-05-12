@@ -68,66 +68,66 @@ const AddHotel = () => {
         <Heading heading="Add new hotels" />
         <p>Template</p>
         <Item {...hotel} />
-        <form onSubmit={handleSubmit(onSubmit)}>
-          {postError && <p>{postError}</p>}
-          <fieldset disabled={submitting}>
-            <div>
-              <input name="name" placeholder="Hotel name" ref={register} />
-              {errors.name && <p>{errors.name.message}</p>}
-            </div>
-            <div>
-              <input
-                name="price"
-                placeholder="Price"
-                ref={register}
-                type="number"
-              />
-              {errors.price && <p>{errors.price.message}</p>}
-            </div>
-            <div>
-              <input
-                name="shortdescription"
-                placeholder="Short description"
-                ref={register}
-                type="text"
-              />
-              {errors.shortdescription && (
-                <p>{errors.shortdescription.message}</p>
-              )}
-            </div>
-            <div>
-              <textarea
-                name="description"
-                placeholder="Description"
-                ref={register}
-                type="text"
-              />
-              {errors.description && <p>{errors.description.message}</p>}
-            </div>
-            <div>
-              <input
-                name="extras"
-                placeholder="Extras (use a dash - between the extras)"
-                ref={register}
-                type="extras"
-              />
-              {errors.extras && <p>{errors.extras.message}</p>}
-            </div>
-            <div>
-              <input
-                name="img"
-                placeholder="Image URL"
-                ref={register}
-                type="text"
-              />
-              {errors.img && <p>{errors.img.message}</p>}
-            </div>
-            <button className="button__add" type="submit">
-              {submitting ? "Adding ..." : "Add"}
-            </button>
-          </fieldset>
-        </form>
-        {success ? <p>New hotel {hotel.name} was added</p> : null}
+        <div className="formdiv">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            {postError && <p>{postError}</p>}
+            <fieldset disabled={submitting}>
+              <div>
+                <label>
+                  Hotel name
+                  <br></br>
+                  <input name="name" ref={register} />
+                </label>
+                {errors.name && <p>{errors.name.message}</p>}
+              </div>
+              <div>
+                <label>
+                  Price
+                  <br></br>
+                  <input name="price" ref={register} />
+                </label>
+                {errors.price && <p>{errors.price.message}</p>}
+              </div>
+              <div>
+                <label>
+                  Short description
+                  <br></br>
+                  <input name="shortdescription" ref={register} />
+                </label>
+                {errors.shortdescription && (
+                  <p>{errors.shortdescription.message}</p>
+                )}
+              </div>
+              <div>
+                <label>
+                  Description
+                  <br></br>
+                  <textarea name="description" ref={register} type="text" />
+                </label>
+                {errors.description && <p>{errors.description.message}</p>}
+              </div>
+              <div>
+                <label>
+                  Extras (use a dash - between the extras)
+                  <br></br>
+                  <input name="extras" ref={register} />
+                </label>
+                {errors.extras && <p>{errors.extras.message}</p>}
+              </div>
+              <div>
+                <label>
+                  Image URL
+                  <input name="img" ref={register} />
+                </label>
+                {errors.img && <p>{errors.img.message}</p>}
+              </div>
+              <button className="formbutton" type="submit">
+                {submitting ? "Adding ..." : "Add"}
+              </button>
+            </fieldset>
+          </form>
+          {success ? <p>New hotel {hotel.name} was added</p> : null}
+        </div>
       </MyLayout>
     </>
   );
