@@ -22,6 +22,8 @@ const Login = () => {
     setSubmitting(true);
     setLoginError(null);
 
+    history.push("/enquiries");
+
     console.log(data);
     try {
       const response = await axios.post(`${BASE_URL_LOGIN}${AUTH_PATH}`, data);
@@ -35,10 +37,6 @@ const Login = () => {
     }
   };
 
-  function login() {
-    history.push("/enquiries");
-  }
-
   return (
     <>
       <MyLayout>
@@ -51,10 +49,10 @@ const Login = () => {
                 <label>
                   Username
                   <br></br>
-                  <input name="username" ref={register} />
+                  <input name="identifier" ref={register} />
                 </label>
                 <br></br>
-                {errors.username && <span>{errors.username.message}</span>}
+                {errors.identifier && <span>{errors.identifier.message}</span>}
                 <label>
                   Password
                   <br></br>
@@ -62,7 +60,7 @@ const Login = () => {
                 </label>
                 {errors.password && <p>{errors.password.message}</p>}
               </div>
-              <button className="formbutton" onClick={login} type="submit">
+              <button className="formbutton" type="submit">
                 {submitting ? "Logging in..." : "Login"}
               </button>
             </fieldset>
