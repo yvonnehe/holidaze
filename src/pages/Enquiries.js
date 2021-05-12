@@ -75,14 +75,19 @@ const Enquiries = () => {
 
             return (
               <div key={booking.id} className="contactcon">
-                <p>{booking.guests}</p>
-                <p>{booking.date}</p>
+                <p>{booking.name}</p>
+                <p>{booking.guests} guests</p>
+                <p>
+                  {new Date(booking.datefrom).toLocaleString().split(",")[0]} -{" "}
+                  {new Date(booking.dateto).toLocaleString().split(",")[0]}
+                </p>
+                <p>Total: {booking.price} NOK</p>
                 <hr className="line"></hr>
                 <br></br>
               </div>
             );
           })}
-          <Heading heading="Enquries" />
+          <Heading heading="Enquiries" />
           {contacts.map((contact) => {
             console.log(contact);
 
