@@ -26,9 +26,12 @@ const Login = () => {
 
     console.log(data);
     try {
-      const response = await axios.post(`${BASE_URL_LOGIN}${AUTH_PATH}`, data);
-      console.log("response", response.data);
-      setAuth(response.data);
+      await axios
+        .post(`${BASE_URL_LOGIN}${AUTH_PATH}`, data)
+        .then((response) => {
+          console.log("response", response);
+          setAuth(response);
+        });
     } catch (error) {
       console.log("error", error);
       setLoginError(error.toString());
@@ -56,7 +59,7 @@ const Login = () => {
                 <label>
                   Password
                   <br></br>
-                  <input name="password" ref={register} />
+                  <input type="password" name="password" ref={register} />
                 </label>
                 {errors.password && <p>{errors.password.message}</p>}
               </div>
