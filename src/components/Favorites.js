@@ -45,23 +45,28 @@ const Favorites = () => {
       <h3 style={{ textAlign: "center" }}>CUSTOMER FAVORITES</h3>
       <Row gutter={[16, 16]}>
         {hotels.map((hotel) => {
-          return (
-            <div key={hotel.id} className="favoritesdiv">
-              <Col sm={12} lg={6}>
-                <div>
-                  <img
-                    src={hotel.img}
-                    alt={hotel.name}
-                    style={{ width: "100%" }}
-                    className="favoritesimg"
-                  />
-                </div>
-                <Link to={`/places-to-stay/${hotel.id}`} className="hotelinfo">
-                  <h3 className="name biggertext">{hotel.name}</h3>
-                </Link>
-              </Col>
-            </div>
-          );
+          if (hotel.favorite) {
+            return (
+              <div key={hotel.id} className="favoritesdiv">
+                <Col sm={12} lg={6}>
+                  <div>
+                    <img
+                      src={hotel.img}
+                      alt={hotel.name}
+                      style={{ width: "100%" }}
+                      className="favoritesimg"
+                    />
+                  </div>
+                  <Link
+                    to={`/places-to-stay/${hotel.id}`}
+                    className="hotelinfo"
+                  >
+                    <h3 className="name biggertext">{hotel.name}</h3>
+                  </Link>
+                </Col>
+              </div>
+            );
+          } else return "";
         })}
       </Row>
     </>
