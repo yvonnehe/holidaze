@@ -4,13 +4,14 @@ import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import axios from "axios";
-import { CONTACT_URL } from "../utils/constants";
+import { CONTACT_URL, BOOKING_URL } from "../utils/constants";
 
 const Enquiries = () => {
   const [auth] = useContext(AuthContext);
   const history = useHistory();
 
   const [contacts, setContacts] = useState([]);
+  const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -31,6 +32,21 @@ const Enquiries = () => {
       }
     };
     fetchContacts();
+  }, []);
+
+  useEffect(() => {
+    const fetchBookings = async () => {
+      try {
+        const response = await axios.get(`${BOOKING_URL}`);
+        console.log(response);
+        setBookings(response.data);
+      } catch (error) {
+        setError(error.toString());
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchBookings();
   }, []);
 
   if (loading) {
@@ -54,6 +70,18 @@ const Enquiries = () => {
       <>
         <MyLayout>
           <Heading heading="Bookings" />
+          {bookings.map((booking) => {
+            console.log(booking);
+
+            return (
+              <div key={booking.id} className="contactcon">
+                <p>{booking.guests}</p>
+                <p>{booking.date}</p>
+                <hr className="line"></hr>
+                <br></br>
+              </div>
+            );
+          })}
           <Heading heading="Enquries" />
           {contacts.map((contact) => {
             console.log(contact);

@@ -3,7 +3,7 @@ import Heading from "../components/Heading";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { BASE_URL } from "../utils/constants";
+import { BASE_URL, BOOKING_URL } from "../utils/constants";
 import { DatePicker, Space } from "antd";
 import { Input, InputNumber } from "antd";
 import { useForm, Controller } from "react-hook-form";
@@ -34,9 +34,44 @@ const Shotel = () => {
     resolver: yupResolver(schema),
   });
 
-  function onSubmit(data) {
+  const [submitting, setSubmitting] = useState(false);
+  const [postError, setPostError] = useState(null);
+  const [success, setSuccess] = useState(null);
+
+  // constants for adding bookings
+  const [bookings, setBookings] = useState(null);
+
+  const onSubmit = async (data) => {
+    setSubmitting(true);
+    setPostError(null);
     console.log(data);
-  }
+
+    data = {
+      id: hotel.id,
+      guests: data.guests,
+      datefrom: data.date[0],
+      dateto: data.date[1],
+      name: hotel.name,
+      price:
+        Math.ceil((data.date[1] - data.date[0]) / (1000 * 3600 * 24)) *
+        hotel.price,
+    };
+    console.log(data);
+
+    try {
+      await axios.post(`${BOOKING_URL}`, data).then((response) => {
+        console.log(response);
+        setBookings(response);
+        setSuccess(true);
+      });
+    } catch (error) {
+      console.log("error", error);
+      setPostError(error.toString());
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   console.log(errors);
 
   useEffect(() => {
@@ -121,7 +156,7 @@ const Shotel = () => {
             {errors.guests && <span>{errors.guests.message}</span>}
             <button
               className="formbutton"
-              type="Submit"
+              type="submit"
               style={{ width: "84%" }}
             >
               Book now
