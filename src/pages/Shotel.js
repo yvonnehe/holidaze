@@ -30,14 +30,15 @@ const Shotel = () => {
   const { RangePicker } = DatePicker;
 
   //form
-  const { register, handleSubmit, errors, control } = useForm({
-    resolver: yupResolver(schema),
-  });
-
+  const { register, handleSubmit, errors, control, getValues, watch } = useForm(
+    {
+      resolver: yupResolver(schema),
+    }
+  );
   const [submitting, setSubmitting] = useState(false);
   const [postError, setPostError] = useState(null);
   const [success, setSuccess] = useState(null);
-
+  const formValues = watch();
   // constants for adding bookings
   const [bookings, setBookings] = useState(null);
 
@@ -123,7 +124,12 @@ const Shotel = () => {
         <br></br>
 
         <p>{hotel.price} NOK per night</p>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          onChange={() => {
+            console.log("fack");
+          }}
+        >
           <div className="site-input-group-wrapper" style={{ width: "30%" }}>
             <Space direction="vertical" size={12}>
               <Controller
@@ -148,7 +154,6 @@ const Shotel = () => {
                 min={1}
                 max={99}
                 defaultValue={2}
-                onChange={onChange}
                 name="guests"
                 ref={register}
               />
@@ -161,6 +166,12 @@ const Shotel = () => {
             >
               Book now
             </button>
+            <div>
+              {formValues.date &&
+                Math.ceil(
+                  (formValues.date[1] - formValues.date[0]) / (1000 * 3600 * 24)
+                ) * hotel.price}
+            </div>
           </div>
         </form>
       </MyLayout>
