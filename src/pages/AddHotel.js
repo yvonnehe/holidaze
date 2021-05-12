@@ -67,6 +67,7 @@ const AddHotel = () => {
       <MyLayout>
         <Heading heading="Add new hotels" />
         <p>Template</p>
+        <Item {...hotel} />
         <form onSubmit={handleSubmit(onSubmit)}>
           {postError && <p>{postError}</p>}
           <fieldset disabled={submitting}>
@@ -127,7 +128,6 @@ const AddHotel = () => {
           </fieldset>
         </form>
         {success ? <p>New hotel {hotel.name} was added</p> : null}
-        <Item {...hotel} />
       </MyLayout>
     </>
   );
