@@ -63,7 +63,7 @@ const HomeLayout = ({ children }) => {
               Add new hotels
             </Link>
             <button
-              className="logbutton logbutton--blue"
+              className="logbutton logbutton--blue loglink--light"
               onClick={logout}
               type="button"
             >
