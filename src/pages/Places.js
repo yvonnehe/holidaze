@@ -140,22 +140,19 @@ const Places = () => {
           {hotels.map((hotel) => {
             return (
               <div key={hotel.id} className="hoteldiv">
-                <Row gutter={[16, 16]}>
-                  <Col sm={24} lg={9}>
-                    <div>
-                      <img
-                        src={hotel.img}
-                        alt={hotel.name}
-                        style={{ width: "100%" }}
-                        className="hotelimg"
-                      />
-                    </div>
-                  </Col>
-                  <Col sm={24} lg={11}>
-                    <Link
-                      to={`/places-to-stay/${hotel.id}`}
-                      className="hotelinfo"
-                    >
+                <Link to={`/places-to-stay/${hotel.id}`} className="hotelinfo">
+                  <Row gutter={[16, 16]}>
+                    <Col sm={24} lg={9}>
+                      <div>
+                        <img
+                          src={hotel.img}
+                          alt={hotel.name}
+                          style={{ width: "100%" }}
+                          className="hotelimg"
+                        />
+                      </div>
+                    </Col>
+                    <Col sm={24} lg={11}>
                       <p className="text">{hotel.shortdescription}</p>
                       <h3 className="biggertext">{hotel.name}</h3>
                       <hr className="line"></hr>
@@ -164,18 +161,13 @@ const Places = () => {
                       <p className="text">
                         {hotel.distance}km from Bergen city centre
                       </p>
-                    </Link>
-                  </Col>
-                  <Col sm={24} lg={4}>
-                    <Link
-                      to={`/places-to-stay/${hotel.id}`}
-                      className="hotelinfo"
-                    >
+                    </Col>
+                    <Col sm={24} lg={4}>
                       <p className="price biggertext">{hotel.price} NOK</p>
                       <p className="taxes text">Per night including taxes</p>
-                    </Link>
-                  </Col>
-                </Row>
+                    </Col>
+                  </Row>
+                </Link>
               </div>
             );
           })}
