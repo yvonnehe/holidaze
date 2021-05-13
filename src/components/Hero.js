@@ -25,21 +25,21 @@ const Hero = () => {
       >
         <div>
           <img src={HeroImg1} alt="Bergen aero view" width="100%" />
-          <h3 style={contentStyle}>
+          <div style={contentStyle}>
             <HeroText />
-          </h3>
+          </div>
         </div>
         <div>
           <img src={HeroImg2} alt="Bergen aero view" width="100%" />
-          <h3 style={contentStyle}>
+          <div style={contentStyle}>
             <HeroText />
-          </h3>
+          </div>
         </div>
         <div>
           <img src={HeroImg3} alt="Bergen aero view" width="100%" />
-          <h3 style={contentStyle}>
+          <div style={contentStyle}>
             <HeroText />
-          </h3>
+          </div>
         </div>
       </Carousel>
     </>
