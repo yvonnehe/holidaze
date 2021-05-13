@@ -30,17 +30,15 @@ const Shotel = () => {
   const { RangePicker } = DatePicker;
 
   //form
-  const { register, handleSubmit, errors, control, getValues, watch } = useForm(
-    {
-      resolver: yupResolver(schema),
-    }
-  );
-  const [submitting, setSubmitting] = useState(false);
-  const [postError, setPostError] = useState(null);
-  const [success, setSuccess] = useState(null);
+  const { register, handleSubmit, errors, control, watch } = useForm({
+    resolver: yupResolver(schema),
+  });
+  const [, setSubmitting] = useState(false);
+  const [, setPostError] = useState(null);
+  const [, setSuccess] = useState(null);
   const formValues = watch();
   // constants for adding bookings
-  const [bookings, setBookings] = useState(null);
+  const [, setBookings] = useState(null);
 
   const onSubmit = async (data) => {
     setSubmitting(true);
@@ -89,10 +87,6 @@ const Shotel = () => {
     };
     fetchHotel();
   }, [id]);
-
-  function onChange(value) {
-    console.log("changed", value);
-  }
 
   if (loading) {
     return (
