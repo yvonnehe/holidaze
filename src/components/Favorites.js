@@ -48,15 +48,17 @@ const Favorites = () => {
           if (hotel.favorite) {
             return (
               <Col key={hotel.id} xs={24} sm={12} lg={6}>
-                <div
-                  className="favoritesimg"
-                  style={{
-                    width: "100%",
-                    paddingBottom: "100%",
-                    backgroundImage: `url('${hotel.img}')`,
-                    backgroundSize: "cover",
-                  }}
-                ></div>
+                <Link to={`/places-to-stay/${hotel.id}`} className="hotelinfo">
+                  <div
+                    className="favoritesimg"
+                    style={{
+                      width: "100%",
+                      paddingBottom: "100%",
+                      backgroundImage: `url('${hotel.img}')`,
+                      backgroundSize: "cover",
+                    }}
+                  ></div>
+                </Link>
                 <Link to={`/places-to-stay/${hotel.id}`} className="hotelinfo">
                   <h3
                     className="name"
