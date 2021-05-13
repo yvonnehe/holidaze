@@ -90,6 +90,10 @@ const Shotel = () => {
     fetchHotel();
   }, [id]);
 
+  function onChange(value) {
+    console.log("changed", value);
+  }
+
   if (loading) {
     return (
       <MyLayout>
@@ -98,9 +102,7 @@ const Shotel = () => {
         </div>
       </MyLayout>
     );
-  }
-
-  if (error) {
+  } else if (error) {
     return (
       <MyLayout>
         <div>
@@ -108,75 +110,71 @@ const Shotel = () => {
         </div>
       </MyLayout>
     );
-  }
+  } else
+    return (
+      <>
+        <MyLayout>
+          <Heading heading={hotel.name} />
+          <img src={hotel.img} alt={hotel.name} />
+          <p>{hotel.shortdescription}</p>
+          <p>{hotel.description}</p>
+          <br></br>
 
-  function onChange(value) {
-    console.log("changed", value);
-  }
-
-  return (
-    <>
-      <MyLayout>
-        <Heading heading={hotel.name} />
-        <img src={hotel.img} alt={hotel.name} />
-        <p>{hotel.shortdescription}</p>
-        <p>{hotel.description}</p>
-        <br></br>
-
-        <p>{hotel.price} NOK per night</p>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          onChange={() => {
-            console.log("fack");
-          }}
-        >
-          <div className="site-input-group-wrapper" style={{ width: "30%" }}>
-            <Space direction="vertical" size={12}>
-              <Controller
-                as={RangePicker}
-                options={{ name: "data" }}
-                control={control}
-                name="date"
-                onChange={([selected]) => {
-                  return { value: selected };
-                }}
-                defaultValue={{}}
-              />
-            </Space>
-            {errors.date && <span>{errors.date.message}</span>}
-            <Input.Group compact>
-              <Input
-                style={{ width: "60%", height: "42px" }}
-                defaultValue="Number of guests"
-              />
-              <InputNumber
-                style={{ width: "24%" }}
-                min={1}
-                max={99}
-                defaultValue={2}
-                name="guests"
-                ref={register}
-              />
-            </Input.Group>
-            {errors.guests && <span>{errors.guests.message}</span>}
-            <button
-              className="formbutton"
-              type="submit"
-              style={{ width: "84%" }}
-            >
-              Book now
-            </button>
-            <div>
-              {formValues.date &&
-                Math.ceil(
-                  (formValues.date[1] - formValues.date[0]) / (1000 * 3600 * 24)
-                ) * hotel.price}
+          <p>{hotel.price} NOK per night</p>
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            onChange={() => {
+              console.log("fack");
+            }}
+          >
+            <div className="site-input-group-wrapper" style={{ width: "30%" }}>
+              <Space direction="vertical" size={12}>
+                <Controller
+                  as={RangePicker}
+                  options={{ name: "data" }}
+                  control={control}
+                  name="date"
+                  onChange={([selected]) => {
+                    return { value: selected };
+                  }}
+                  defaultValue={{}}
+                />
+              </Space>
+              {errors.date && <span>{errors.date.message}</span>}
+              <Input.Group compact>
+                <Input
+                  style={{ width: "60%", height: "42px" }}
+                  defaultValue="Number of guests"
+                />
+                <InputNumber
+                  style={{ width: "24%" }}
+                  min={1}
+                  max={99}
+                  defaultValue={2}
+                  name="guests"
+                  ref={register}
+                />
+              </Input.Group>
+              {errors.guests && <span>{errors.guests.message}</span>}
+              <button
+                className="formbutton"
+                type="submit"
+                style={{ width: "84%" }}
+              >
+                Book now
+              </button>
+              <div>
+                {formValues.date &&
+                  Math.ceil(
+                    (formValues.date[1] - formValues.date[0]) /
+                      (1000 * 3600 * 24)
+                  ) * hotel.price}
+              </div>
             </div>
-          </div>
-        </form>
-      </MyLayout>
-    </>
-  );
+          </form>
+        </MyLayout>
+      </>
+    );
 };
 
 export default Shotel;

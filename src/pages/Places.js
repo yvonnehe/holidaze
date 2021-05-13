@@ -113,9 +113,7 @@ const Places = () => {
         </div>
       </MyLayout>
     );
-  }
-
-  if (error) {
+  } else if (error) {
     return (
       <MyLayout>
         <div>
@@ -123,68 +121,67 @@ const Places = () => {
         </div>
       </MyLayout>
     );
-  }
-
-  return (
-    <>
-      <MyLayout>
-        <div className="titlesearch">
-          <Heading heading="Places to stay" />
-          <div className="filterdiv">
-            <input
-              className="filter"
-              type="text"
-              name="query"
-              onChange={handleFiltering}
-              placeholder="Search..."
-            />
-          </div>
-        </div>
-        {hotels.map((hotel) => {
-          return (
-            <div key={hotel.id} className="hoteldiv">
-              <Row gutter={[16, 16]}>
-                <Col sm={24} lg={9}>
-                  <div>
-                    <img
-                      src={hotel.img}
-                      alt={hotel.name}
-                      style={{ width: "100%" }}
-                      className="hotelimg"
-                    />
-                  </div>
-                </Col>
-                <Col sm={24} lg={11}>
-                  <Link
-                    to={`/places-to-stay/${hotel.id}`}
-                    className="hotelinfo"
-                  >
-                    <p className="text">{hotel.shortdescription}</p>
-                    <h3 className="biggertext">{hotel.name}</h3>
-                    <hr className="line"></hr>
-                    <br></br>
-                    <p className="extras text">{hotel.extras}</p>
-                    <p className="text">
-                      {hotel.distance}km from Bergen city centre
-                    </p>
-                  </Link>
-                </Col>
-                <Col sm={24} lg={4}>
-                  <Link
-                    to={`/places-to-stay/${hotel.id}`}
-                    className="hotelinfo"
-                  >
-                    <p className="price biggertext">{hotel.price} NOK</p>
-                    <p className="taxes text">Per night including taxes</p>
-                  </Link>
-                </Col>
-              </Row>
+  } else
+    return (
+      <>
+        <MyLayout>
+          <div className="titlesearch">
+            <Heading heading="Places to stay" />
+            <div className="filterdiv">
+              <input
+                className="filter"
+                type="text"
+                name="query"
+                onChange={handleFiltering}
+                placeholder="Search..."
+              />
             </div>
-          );
-        })}
-      </MyLayout>
-    </>
-  );
+          </div>
+          {hotels.map((hotel) => {
+            return (
+              <div key={hotel.id} className="hoteldiv">
+                <Row gutter={[16, 16]}>
+                  <Col sm={24} lg={9}>
+                    <div>
+                      <img
+                        src={hotel.img}
+                        alt={hotel.name}
+                        style={{ width: "100%" }}
+                        className="hotelimg"
+                      />
+                    </div>
+                  </Col>
+                  <Col sm={24} lg={11}>
+                    <Link
+                      to={`/places-to-stay/${hotel.id}`}
+                      className="hotelinfo"
+                    >
+                      <p className="text">{hotel.shortdescription}</p>
+                      <h3 className="biggertext">{hotel.name}</h3>
+                      <hr className="line"></hr>
+                      <br></br>
+                      <p className="extras text">{hotel.extras}</p>
+                      <p className="text">
+                        {hotel.distance}km from Bergen city centre
+                      </p>
+                    </Link>
+                  </Col>
+                  <Col sm={24} lg={4}>
+                    <Link
+                      to={`/places-to-stay/${hotel.id}`}
+                      className="hotelinfo"
+                    >
+                      <p className="price biggertext">{hotel.price} NOK</p>
+                      <p className="taxes text">Per night including taxes</p>
+                    </Link>
+                  </Col>
+                </Row>
+              </div>
+            );
+          })}
+        </MyLayout>
+      </>
+    );
 };
 
 export default Places;
