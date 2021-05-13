@@ -34,7 +34,7 @@ const Contact = () => {
   const [success, setSuccess] = useState(null);
 
   // constants for adding contact
-  const [contact, setContact] = useState(null);
+  const [, setContact] = useState(null);
 
   // handles submit from form
   const onSubmit = async (data) => {
