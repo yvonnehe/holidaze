@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;800&display=swap");
 @import "partials/places";
 @import "partials/hero";
+@import "partials/shotel";
 
 body {
   font-family: "Raleway", sans-serif;
+  color: #2a384c;
 }
 
 h1 {
@@ -15,6 +17,11 @@ h1 {
 
 h2 {
   font-weight: 400;
+  color: #2a384c;
+}
+
+h3 {
+  color: #2a384c;
 }
 
 .logbutton {
@@ -26,8 +33,10 @@ h2 {
   margin: 20px 0px;
   position: relative;
   line-height: normal;
+  color: #2a384c;
   &--blue {
     background-color: #2a384c;
+    color: #e7eef5;
   }
 }
 
@@ -67,4 +76,17 @@ select {
   width: 50%;
   min-height: 70vh; /* NB RESPONSIVE! */
   max-width: 510px;
+}
+
+// layout
+@media screen and (min-width: 1600px) {
+  .site-layout-content {
+    margin: 0 50px;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .site-layout-content {
+    margin: 0 100px;
+  }
 }
