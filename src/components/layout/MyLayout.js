@@ -72,10 +72,24 @@ const MyLayout = ({ children }) => {
           </button>
         )}
       </Header>
-      <Content style={{ padding: "40px 50px", backgroundColor: "#ffffff" }}>
+      <Content
+        style={{
+          padding: "40px 50px",
+          backgroundColor: "#ffffff",
+          minHeight: "90vh",
+        }}
+      >
         <div className="site-layout-content"> {children}</div>
       </Content>
-      <Footer style={{ textAlign: "center", backgroundColor: "#E7EEF5" }}>
+      <Footer
+        style={{
+          textAlign: "center",
+          backgroundColor: "#E7EEF5",
+          position: "relative",
+          bottom: "0px",
+          width: "100%",
+        }}
+      >
         © Yvonne Helland 2021
       </Footer>
     </Layout>
