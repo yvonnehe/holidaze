@@ -1,0 +1,30 @@
+input,
+select,
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input[type="number"] {
+  border: inherit;
+}
+
+select {
+  padding: 5px;
+}
+
+.formbutton {
+  background-color: #2a384c;
+  border: none;
+  width: 100%;
+  color: #fff;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.formdiv {
+  margin: auto;
+  width: 50%;
+  min-height: 70vh; /* NB RESPONSIVE! */
+  max-width: 510px;
+}
