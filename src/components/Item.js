@@ -4,7 +4,7 @@ const Item = (props) => {
   const { name, shortdescription, img, price, distance, extras } = props;
   return (
     <>
-      <div className="hoteldiv">
+      <div className="hoteldiv hotelinfo">
         <Row gutter={[16, 16]}>
           <Col sm={24} lg={9}>
             <div>
