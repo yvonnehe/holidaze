@@ -127,11 +127,12 @@ const Shotel = () => {
               <p>{hotel.extras}</p>
               <h4>Location</h4>
               <p>{hotel.distance}km from Bergen city centre</p>
-              <br></br>
 
-              <p>{hotel.price} NOK per night</p>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="bookingdiv">
+                  <p className="bookingdiv--center">
+                    {hotel.price} NOK per night
+                  </p>
                   <div
                     className="site-input-group-wrapper"
                     style={{ width: "220px" }}
@@ -167,11 +168,11 @@ const Shotel = () => {
                     <button
                       className="formbutton"
                       type="submit"
-                      style={{ width: "219px" }}
+                      style={{ width: "219px", marginBottom: "10px" }}
                     >
-                      {submitting ? "Booking ..." : "Book now"}
+                      {success ? "Booking complete!" : "Book now"}
                     </button>
-                    <div>
+                    <div className="bookingdiv--center">
                       Total price{" "}
                       {formValues.date &&
                         Math.ceil(
@@ -182,7 +183,6 @@ const Shotel = () => {
                   </div>
                 </div>
               </form>
-              {success ? <p>Booking complete!</p> : null}
             </Col>
           </Row>
         </MyLayout>
