@@ -48,20 +48,22 @@ const HomeLayout = ({ children }) => {
         </div>
         {auth ? (
           <>
-            <Link
-              className="link"
-              style={{ color: "#2A384C", padding: "0px 25px" }}
-              to="/enquiries"
-            >
-              Enquiries
-            </Link>
-            <Link
-              className="link"
-              style={{ color: "#2A384C", padding: "0px 25px" }}
-              to="/addhotel"
-            >
-              Add new hotels
-            </Link>
+            <div>
+              <Link
+                className="link"
+                style={{ color: "#2A384C", padding: "0px 25px" }}
+                to="/enquiries"
+              >
+                Enquiries
+              </Link>
+              <Link
+                className="link"
+                style={{ color: "#2A384C", padding: "0px 25px" }}
+                to="/addhotel"
+              >
+                Add new hotels
+              </Link>
+            </div>
             <button
               className="logbutton logbutton--blue loglink--light"
               onClick={logout}
