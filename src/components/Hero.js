@@ -12,6 +12,7 @@ const contentStyle = {
   right: "50px",
   width: "60%",
   lineHeight: "55px",
+  maxWidth: "700px",
 };
 
 const Hero = () => {
@@ -24,19 +25,34 @@ const Hero = () => {
         style={{ marginTop: "-67px" }}
       >
         <div>
-          <img src={HeroImg1} alt="Bergen aero view" width="100%" />
+          <img
+            src={HeroImg1}
+            alt="Bergen aero view"
+            width="100%"
+            className="heroimg"
+          />
           <div style={contentStyle}>
             <HeroText />
           </div>
         </div>
         <div>
-          <img src={HeroImg2} alt="Bergen aero view" width="100%" />
+          <img
+            src={HeroImg2}
+            alt="Bergen aero view"
+            width="100%"
+            className="heroimg"
+          />
           <div style={contentStyle}>
             <HeroText />
           </div>
         </div>
         <div>
-          <img src={HeroImg3} alt="Bergen aero view" width="100%" />
+          <img
+            src={HeroImg3}
+            alt="Bergen aero view"
+            width="100%"
+            className="heroimg"
+          />
           <div style={contentStyle}>
             <HeroText />
           </div>
