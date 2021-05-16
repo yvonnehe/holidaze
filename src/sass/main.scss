@@ -34,10 +34,30 @@ h3 {
   position: relative;
   line-height: normal;
   color: #2a384c;
+  &:hover {
+    background-color: #5a6f8d;
+    color: #e7eef5;
+    transition: color 0.5s;
+  }
   &--blue {
     background-color: #2a384c;
     color: #e7eef5;
+    &:hover {
+      background-color: #e7eef5;
+      color: #2a384c;
+      transition: color 0.7s;
+    }
   }
+}
+
+a:hover {
+  color: #98aac4;
+  transition: color 0.3s;
+}
+
+.h3link:hover {
+  color: #98aac4;
+  transition: color 0.3s;
 }
 
 .loglink {
