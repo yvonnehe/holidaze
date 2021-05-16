@@ -9,10 +9,11 @@ const contentStyle = {
   textAlign: "right",
   position: "absolute",
   bottom: "10%",
-  right: "50px",
+  right: "5%",
   width: "60%",
   lineHeight: "55px",
   maxWidth: "700px",
+  minWidth: "360px",
 };
 
 const Hero = () => {
