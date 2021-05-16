@@ -61,7 +61,7 @@ const Favorites = () => {
                 </Link>
                 <Link to={`/places-to-stay/${hotel.id}`} className="hotelinfo">
                   <h3
-                    className="name"
+                    className="name h3link"
                     style={{ textAlign: "center", padding: "10px" }}
                   >
                     {hotel.name}
