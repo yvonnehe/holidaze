@@ -74,11 +74,7 @@ const Enquiries = () => {
             console.log(booking);
 
             return (
-              <div
-                key={booking.id}
-                className="contactcon"
-                style={{ marginBottom: "30px" }}
-              >
+              <div key={booking.id} className="contactcon">
                 <p>{booking.name}</p>
                 <p>{booking.guests} guests</p>
                 <p>
@@ -91,6 +87,7 @@ const Enquiries = () => {
               </div>
             );
           })}
+          <div style={{ marginBottom: "30px" }}></div>
           <Heading heading="Enquiries" />
           {contacts.map((contact) => {
             console.log(contact);
