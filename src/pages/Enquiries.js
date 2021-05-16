@@ -74,7 +74,11 @@ const Enquiries = () => {
             console.log(booking);
 
             return (
-              <div key={booking.id} className="contactcon">
+              <div
+                key={booking.id}
+                className="contactcon"
+                style={{ marginBottom: "30px" }}
+              >
                 <p>{booking.name}</p>
                 <p>{booking.guests} guests</p>
                 <p>
