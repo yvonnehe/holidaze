@@ -64,7 +64,20 @@
 
 @media screen and (max-width: 575px) {
   .price,
-  .taxes {
-    text-align: left;
+  .taxes,
+  .hoteldiv {
+    text-align: center;
+  }
+  .hoteldiv {
+    width: 100%;
+  }
+  .line {
+    float: none;
+  }
+  .ant-row {
+    display: block;
+  }
+  .text {
+    margin-top: 20px;
   }
 }
