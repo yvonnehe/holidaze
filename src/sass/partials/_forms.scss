@@ -28,3 +28,9 @@ select {
   min-height: 70vh; /* NB RESPONSIVE! */
   max-width: 510px;
 }
+
+@media screen and (max-width: 575px) {
+  .formdiv {
+    width: 100%;
+  }
+}

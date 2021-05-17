@@ -80,4 +80,19 @@
   .text {
     margin-top: 20px;
   }
+  .searchdiv {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .titlesearch {
+    flex-direction: column;
+  }
+  .filterdiv {
+    margin: 0 auto;
+  }
+  .searchdiv {
+    text-align: center;
+  }
 }
