@@ -119,7 +119,7 @@ const Shotel = () => {
                 style={{ width: "100%" }}
               />
             </Col>
-            <Col sm={24} lg={12}>
+            <Col sm={24} lg={12} className="col2">
               <h4>About this space</h4>
               <p>{hotel.shortdescription}</p>
               <p>{hotel.description}</p>
@@ -130,7 +130,7 @@ const Shotel = () => {
 
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="bookingdiv">
-                  <p className="bookingdiv--center">
+                  <p className="bookingdiv--center bookingdiv--price">
                     {hotel.price} NOK per night
                   </p>
                   <div
