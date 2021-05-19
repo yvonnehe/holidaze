@@ -11,6 +11,7 @@ const HomeLayout = ({ children }) => {
   const [auth, setAuth] = useContext(AuthContext);
   const history = useHistory();
   const [showMenu, setShowMenu] = useState(false);
+  const [prevWindowSize, setPrevWindowSize] = useState(window.innerWidth);
 
   function logout() {
     setAuth(null);
@@ -21,17 +22,16 @@ const HomeLayout = ({ children }) => {
     setShowMenu(!showMenu);
   }
 
-  window.onload = () => {
-    if (window.innerWidth > 875) {
+  function checkWindowSize() {
+    if (window.innerWidth > 875 && prevWindowSize < 875) {
       setShowMenu(true);
     }
-  };
+    setPrevWindowSize(window.innerWidth);
+  }
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 875) {
-      setShowMenu(true);
-    }
-  });
+  window.onload = () => checkWindowSize();
+
+  window.onresize = () => checkWindowSize();
 
   return (
     <Layout className="layout">
