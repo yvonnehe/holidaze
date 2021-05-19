@@ -31,31 +31,14 @@ const AddHotel = () => {
   const [hotel, setHotel] = useState(null);
 
   // form constants
-  const { register, handleSubmit, errors } = useForm({
+  const { register, handleSubmit, errors, watch } = useForm({
     resolver: yupResolver(hotelSchema),
   });
 
   const [submitting, setSubmitting] = useState(false);
   const [postError, setPostError] = useState(null);
   const [success, setSuccess] = useState(null);
-
-  // for hotel template
-  const [, setLoading] = useState(true);
-  const [, setError] = useState(null);
-  useEffect(() => {
-    const fetchHotel = async () => {
-      try {
-        const response = await axios.get(`${BASE_URL}/1`);
-        console.log(response);
-        setHotel(response.data);
-      } catch (error) {
-        setError(error.toString());
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchHotel();
-  }, []);
+  const data = watch();
 
   // handles submit from form
   const onSubmit = async (data) => {
@@ -86,7 +69,7 @@ const AddHotel = () => {
         <MyLayout>
           <Heading heading="Add new hotels" />
           <p style={{ fontWeight: "700", fontSize: "16px" }}>Template</p>
-          <Item {...hotel} />
+          <Item {...data} />
           <div className="formdiv">
             <form onSubmit={handleSubmit(onSubmit)}>
               {postError && <p>{postError}</p>}
@@ -119,7 +102,7 @@ const AddHotel = () => {
                 </div>
                 <div>
                   <label>
-                    Description
+                    Description (only visible on specific page)
                     <br></br>
                     <textarea name="description" ref={register} type="text" />
                   </label>
