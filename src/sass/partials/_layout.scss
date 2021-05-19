@@ -1,3 +1,19 @@
+#burger {
+  width: 45px;
+  display: none;
+}
+.logbutton {
+  &-menu {
+    @extend .logbutton;
+  }
+}
+.header {
+  position: relative;
+  &-menu {
+    @extend .header;
+  }
+}
+
 @media screen and (min-width: 1600px) {
   .site-layout-content {
     margin: 0 50px;
@@ -15,3 +31,60 @@
     text-align: center;
   }
 }
+
+@media screen and (max-width: 875px) {
+  .layout {
+    background-color: #fff;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .header {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+    height: fit-content;
+    justify-content: space-between;
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(4px);
+    &-menu {
+      @extend .header;
+      padding-bottom: 30px;
+    }
+  }
+  .logbutton {
+    width: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0 auto;
+  }
+  .links {
+    margin-top: 40px;
+    display: none;
+    flex-direction: column;
+    &-menu {
+      @extend .links;
+      display: flex;
+    }
+  }
+  .navLogo {
+    position: absolute;
+    top: 0;
+    left: 20px;
+  }
+  .navToggle {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    z-index: 5;
+  }
+  #burger {
+    display: inline;
+  }
+}
+
+//transition delay ease in

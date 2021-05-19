@@ -27,6 +27,9 @@ h3 {
     color: #e7eef5;
     transition: color 0.5s;
   }
+  &-menu {
+    @extend .logbutton;
+  }
   &--blue {
     background-color: #2a384c;
     color: #e7eef5;

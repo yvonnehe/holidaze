@@ -1,23 +1,42 @@
 import { Layout } from "antd";
 import { Link, useHistory } from "react-router-dom";
 import logo2 from "../../images/Holidaze-blue-logo.svg";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AuthContext from "../../context/AuthContext";
 import Hero from "../Hero";
+import Burger from "../../images/Holidaze-blue-burger.svg";
 const { Header, Footer, Content } = Layout;
 
 const HomeLayout = ({ children }) => {
   const [auth, setAuth] = useContext(AuthContext);
   const history = useHistory();
+  const [showMenu, setShowMenu] = useState(false);
 
   function logout() {
     setAuth(null);
     history.push("/");
   }
 
+  function toggleMenu() {
+    setShowMenu(!showMenu);
+  }
+
+  window.onload = () => {
+    if (window.innerWidth > 875) {
+      setShowMenu(true);
+    }
+  };
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 875) {
+      setShowMenu(true);
+    }
+  });
+
   return (
     <Layout className="layout">
       <Header
+        className={showMenu ? "header-menu" : "header"}
         style={{
           backgroundColor: "transparent",
           display: "flex",
@@ -25,12 +44,12 @@ const HomeLayout = ({ children }) => {
           zIndex: "10",
         }}
       >
-        <Link to="/">
+        <Link to="/" className="navLogo">
           <div className="logo">
             <img src={logo2} alt="Holidaze logo" width={140} />
           </div>
         </Link>
-        <div>
+        <div className={showMenu ? "links-menu" : "links"}>
           <Link
             className="link"
             style={{ color: "#2A384C", padding: "0px 25px" }}
@@ -64,19 +83,24 @@ const HomeLayout = ({ children }) => {
             </>
           )}
         </div>
-        {auth ? (
+        {showMenu && (
           <button className="logbutton logbutton--blue" type="button">
-            <Link className="loglink--light" to="/login" onClick={logout}>
-              Log out
-            </Link>
-          </button>
-        ) : (
-          <button className="logbutton logbutton--blue" type="button">
-            <Link className="loglink--light" to="/login">
-              Log in
+            <Link
+              className="loglink--light"
+              to="/login"
+              onClick={auth && logout}
+            >
+              {auth ? "Log out" : "Log in"}
             </Link>
           </button>
         )}
+        <img
+          className="navToggle"
+          src={Burger}
+          alt="hamburger menu"
+          id="burger"
+          onClick={toggleMenu}
+        />
       </Header>
       <Hero />
       <Content style={{ padding: "40px 50px", backgroundColor: "#ffffff" }}>
