@@ -5,24 +5,5 @@
 @import "partials/general";
 @import "partials/forms";
 @import "partials/search";
-
-// layout
-@media screen and (min-width: 1600px) {
-  .site-layout-content {
-    margin: 0 50px;
-  }
-}
-
-@media screen and (min-width: 1800px) {
-  .site-layout-content {
-    margin: 0 100px;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  .site-layout-content {
-    text-align: center;
-  }
-}
-
-//test2
+@import "partials/layout";
+@import "partials/enquiries";

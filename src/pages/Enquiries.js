@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import axios from "axios";
 import { CONTACT_URL, BOOKING_URL } from "../utils/constants";
+import { Row, Col } from "antd";
 
 const Enquiries = () => {
   const [auth] = useContext(AuthContext);
@@ -69,40 +70,51 @@ const Enquiries = () => {
     return (
       <>
         <MyLayout>
-          <Heading heading="Bookings" />
-          {bookings.map((booking) => {
-            console.log(booking);
+          <Row gutter={[32, 32]}>
+            <Col sm={24} lg={12}>
+              <Heading heading="Bookings" />
+              {bookings.map((booking) => {
+                console.log(booking);
 
-            return (
-              <div key={booking.id} className="contactcon">
-                <p>{booking.name}</p>
-                <p>{booking.guests} guests</p>
-                <p>
-                  {new Date(booking.datefrom).toLocaleString().split(",")[0]} -{" "}
-                  {new Date(booking.dateto).toLocaleString().split(",")[0]}
-                </p>
-                <p>Total: {booking.price} NOK</p>
-                <hr className="line"></hr>
-                <br></br>
-              </div>
-            );
-          })}
-          <div style={{ marginBottom: "30px" }}></div>
-          <Heading heading="Enquiries" />
-          {contacts.map((contact) => {
-            console.log(contact);
+                return (
+                  <div key={booking.id} className="contactcon">
+                    <p className="bold">{booking.name}</p>
+                    <p>{booking.guests} guests</p>
+                    <p>
+                      {
+                        new Date(booking.datefrom)
+                          .toLocaleString()
+                          .split(",")[0]
+                      }{" "}
+                      -{" "}
+                      {new Date(booking.dateto).toLocaleString().split(",")[0]}
+                    </p>
+                    <p>Total: {booking.price} NOK</p>
+                    <hr className="line"></hr>
+                    <br></br>
+                  </div>
+                );
+              })}
+              <div style={{ marginBottom: "30px" }}></div>
+            </Col>
+            <Col sm={24} lg={12}>
+              <Heading heading="Enquiries" />
+              {contacts.map((contact) => {
+                console.log(contact);
 
-            return (
-              <div key={contact.id} className="contactcon">
-                <p>{contact.Name}</p>
-                <p>{contact.Email}</p>
-                <p>{contact.Subject}</p>
-                <p>{contact.Message}</p>
-                <hr className="line"></hr>
-                <br></br>
-              </div>
-            );
-          })}
+                return (
+                  <div key={contact.id} className="contactcon">
+                    <p className="bold">{contact.Name}</p>
+                    <p>{contact.Email}</p>
+                    <p>{contact.Subject}</p>
+                    <p>{contact.Message}</p>
+                    <hr className="line"></hr>
+                    <br></br>
+                  </div>
+                );
+              })}
+            </Col>
+          </Row>
         </MyLayout>
       </>
     );
