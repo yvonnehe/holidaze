@@ -103,7 +103,7 @@ const AddHotel = () => {
                   <label>
                     Price
                     <br></br>
-                    <input name="price" ref={register} />
+                    <input name="price" ref={register} type="number" />
                   </label>
                   {errors.price && <p>{errors.price.message}</p>}
                 </div>

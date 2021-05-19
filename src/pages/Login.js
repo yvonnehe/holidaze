@@ -59,7 +59,12 @@ const Login = () => {
                 <label>
                   Password
                   <br></br>
-                  <input type="password" name="password" ref={register} />
+                  <input
+                    type="password"
+                    name="password"
+                    ref={register}
+                    id="passwordinput"
+                  />
                 </label>
                 {errors.password && <p>{errors.password.message}</p>}
               </div>
