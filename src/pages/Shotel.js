@@ -14,13 +14,15 @@ import { Row, Col } from "antd";
 const schema = yup.object().shape({
   guests: yup.number().required(),
   date: yup
-    .array()
+    .array("frrr")
     .of(
       yup.object().shape({
-        _d: yup.date("this is not a valid date"),
+        _d: yup
+          .date("this is not a valid date")
+          .min(new Date(Date.now() - 86400000), "You can't book back in time"),
       })
     )
-    .required(),
+    .required("Please fill in a date"),
 });
 
 const Shotel = () => {
@@ -146,7 +148,7 @@ const Shotel = () => {
                         onChange={([selected]) => {
                           return { value: selected };
                         }}
-                        defaultValue={{}}
+                        defaultValue={[]}
                       />
                     </Space>
                     {errors.date && <span>{errors.date.message}</span>}
@@ -173,12 +175,15 @@ const Shotel = () => {
                       {success ? "Booking complete!" : "Book now"}
                     </button>
                     <div className="bookingdiv--center">
-                      Total price{" "}
+                      Total price
                       {formValues.date &&
-                        Math.ceil(
-                          (formValues.date[1] - formValues.date[0]) /
-                            (1000 * 3600 * 24)
-                        ) * hotel.price}
+                        formValues.date[1] &&
+                        " " +
+                          Math.ceil(
+                            (formValues.date[1] - formValues.date[0]) /
+                              (1000 * 3600 * 24)
+                          ) *
+                            hotel.price}
                     </div>
                   </div>
                 </div>
