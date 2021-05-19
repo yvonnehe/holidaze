@@ -22,16 +22,19 @@ const HomeLayout = ({ children }) => {
     setShowMenu(!showMenu);
   }
 
-  function checkWindowSize() {
-    if (window.innerWidth > 875 && prevWindowSize < 875) {
+  function checkWindowSize(onload) {
+    if (
+      (window.innerWidth > 875 && prevWindowSize < 875) ||
+      (onload && window.innerWidth > 875)
+    ) {
       setShowMenu(true);
     }
     setPrevWindowSize(window.innerWidth);
   }
 
-  window.onload = () => checkWindowSize();
+  window.addEventListener("load", () => checkWindowSize(true));
 
-  window.onresize = () => checkWindowSize();
+  window.addEventListener("resize", () => checkWindowSize());
 
   return (
     <Layout className="layout">
