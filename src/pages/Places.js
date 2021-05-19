@@ -136,13 +136,7 @@ const Places = () => {
       </MyLayout>
     );
   } else {
-    return (
-      <MyLayout>
-        <div>
-          <p>There has been an error. We apologize for the inconvenience.</p>
-        </div>
-      </MyLayout>
-    );
+    return <MyLayout></MyLayout>;
   }
 };
 
