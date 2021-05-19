@@ -43,10 +43,8 @@ const MyLayout = ({ children }) => {
           >
             Contact us
           </Link>
-        </div>
-        {auth ? (
-          <>
-            <div>
+          {auth && (
+            <>
               <Link
                 className="link"
                 style={{ color: "#ffffff", padding: "0px 25px" }}
@@ -61,11 +59,13 @@ const MyLayout = ({ children }) => {
               >
                 Add new hotels
               </Link>
-            </div>
-            <button className="logbutton" onClick={logout} type="button">
-              Log out
-            </button>
-          </>
+            </>
+          )}
+        </div>
+        {auth ? (
+          <button className="logbutton" onClick={logout} type="button">
+            Log out
+          </button>
         ) : (
           <button className="logbutton" type="button">
             <Link className="loglink" to="/login">
