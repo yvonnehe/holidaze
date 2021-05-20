@@ -16,10 +16,12 @@ const Enquiries = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // push back if not logged in
   if (!auth) {
-    history.push("/login");
+    history.push("/");
   }
 
+  // fetch enquiries from contact page
   useEffect(() => {
     const fetchContacts = async () => {
       try {
@@ -35,6 +37,7 @@ const Enquiries = () => {
     fetchContacts();
   }, []);
 
+  // fetch enquiries from booking page
   useEffect(() => {
     const fetchBookings = async () => {
       try {
@@ -50,6 +53,7 @@ const Enquiries = () => {
     fetchBookings();
   }, []);
 
+  // returns
   if (loading) {
     return (
       <MyLayout>
