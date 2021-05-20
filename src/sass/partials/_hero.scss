@@ -34,47 +34,31 @@ h1 {
 @media screen and (max-width: 360px) {
   h1 {
     font-size: 25px;
-    width: 90%;
-    margin-left: 10%;
-  }
-}
-@media screen and (max-width: 325px) {
-  h1 {
-    font-size: 25px;
     width: 70%;
-    text-align: left;
     margin-left: 100px;
   }
 }
 @media screen and (max-width: 300px) {
   h1 {
-    font-size: 25px;
-    width: 70%;
     text-align: left;
-    margin-left: 120px;
+    margin-left: 150px;
   }
 }
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 285px) {
   h1 {
-    font-size: 25px;
-    width: 70%;
-    text-align: left;
-    margin-left: 130px;
+    width: 60%;
+    margin-left: 160px;
   }
 }
-@media screen and (max-width: 270px) {
+@media screen and (max-width: 275px) {
   h1 {
-    font-size: 25px;
-    width: 70%;
-    text-align: left;
-    margin-left: 140px;
+    margin-left: 170px;
   }
 }
 @media screen and (max-width: 255px) {
   h1 {
-    font-size: 25px;
     width: 70%;
     text-align: center;
-    margin-left: 120px;
+    margin-left: 150px;
   }
 }

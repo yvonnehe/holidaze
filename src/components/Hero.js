@@ -10,7 +10,7 @@ const contentStyle = {
   textAlign: "right",
   position: "absolute",
   bottom: "10%",
-  right: "5%",
+  right: "45px",
   width: "60%",
   lineHeight: "55px",
   maxWidth: "700px",
