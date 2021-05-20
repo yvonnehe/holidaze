@@ -26,7 +26,55 @@ h1 {
 
 @media screen and (max-width: 460px) {
   h1 {
-    text-align: center;
+    width: 90%;
+    margin-left: 10%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  h1 {
     font-size: 25px;
+    width: 90%;
+    margin-left: 10%;
+  }
+}
+@media screen and (max-width: 325px) {
+  h1 {
+    font-size: 25px;
+    width: 70%;
+    text-align: left;
+    margin-left: 100px;
+  }
+}
+@media screen and (max-width: 300px) {
+  h1 {
+    font-size: 25px;
+    width: 70%;
+    text-align: left;
+    margin-left: 120px;
+  }
+}
+@media screen and (max-width: 280px) {
+  h1 {
+    font-size: 25px;
+    width: 70%;
+    text-align: left;
+    margin-left: 130px;
+  }
+}
+@media screen and (max-width: 270px) {
+  h1 {
+    font-size: 25px;
+    width: 70%;
+    text-align: left;
+    margin-left: 140px;
+  }
+}
+@media screen and (max-width: 255px) {
+  h1 {
+    font-size: 25px;
+    width: 70%;
+    text-align: center;
+    margin-left: 120px;
   }
 }
