@@ -1,13 +1,15 @@
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-
 import Heading from "../components/Heading";
 import MyLayout from "../components/layout/MyLayout";
 import { useState } from "react";
 import { CONTACT_URL } from "../utils/constants";
 import axios from "axios";
 
+// form imports
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+// schema definition
 const schema = yup.object().shape({
   Name: yup
     .string()
@@ -59,6 +61,7 @@ const Contact = () => {
 
   console.log(errors);
 
+  // returns
   return (
     <>
       <MyLayout>
