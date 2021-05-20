@@ -1,6 +1,6 @@
 import Heading from "../components/Heading";
 import MyLayout from "../components/layout/MyLayout";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import { BASE_URL } from "../utils/constants";
@@ -61,8 +61,9 @@ const AddHotel = () => {
     }
   };
 
+  // returns + if no auth push user back to home
   if (!auth) {
-    history.push("/login");
+    history.push("/");
   } else
     return (
       <>

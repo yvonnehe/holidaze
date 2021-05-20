@@ -36,18 +36,21 @@ const Shotel = () => {
   const { register, handleSubmit, errors, control, watch } = useForm({
     resolver: yupResolver(schema),
   });
-  const [submitting, setSubmitting] = useState(false);
+  const [, setSubmitting] = useState(false);
   const [, setPostError] = useState(null);
   const [success, setSuccess] = useState(null);
   const formValues = watch();
+
   // constants for adding bookings
   const [, setBookings] = useState(null);
 
+  // submit
   const onSubmit = async (data) => {
     setSubmitting(true);
     setPostError(null);
     console.log(data);
 
+    // data object made to store hotel information to be used
     data = {
       id: hotel.id,
       guests: data.guests,
@@ -76,6 +79,7 @@ const Shotel = () => {
 
   console.log(errors);
 
+  // fetch specific hotel by id
   useEffect(() => {
     const fetchHotel = async () => {
       try {
@@ -91,6 +95,7 @@ const Shotel = () => {
     fetchHotel();
   }, [id]);
 
+  // returns/loading
   if (loading) {
     return (
       <MyLayout>

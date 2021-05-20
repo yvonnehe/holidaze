@@ -12,6 +12,7 @@ const Places = () => {
   const [error, setError] = useState(null);
   const [showSearchOptions, setShowSearchOptions] = useState(false);
 
+  // fetch hotels
   useEffect(() => {
     const fetchHotels = async () => {
       try {
@@ -30,7 +31,7 @@ const Places = () => {
 
   //filtering
   const [filteredHotels, setFilteredHotels] = useState(hotels);
-  const [filtered, setFiltered] = useState(false);
+  const [, setFiltered] = useState(false);
 
   const handleFiltering = (e) => {
     let filterHotels = hotels.filter((hotel) => {
@@ -45,6 +46,7 @@ const Places = () => {
     setFiltered(false);
   }
 
+  // returns
   if (filteredHotels) {
     return (
       <>
