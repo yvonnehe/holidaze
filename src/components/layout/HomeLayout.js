@@ -13,11 +13,13 @@ const HomeLayout = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [prevWindowSize, setPrevWindowSize] = useState(window.innerWidth);
 
+  // push back to home if log out
   function logout() {
     setAuth(null);
     history.push("/");
   }
 
+  // responsive menu
   function toggleMenu() {
     setShowMenu(!showMenu);
   }
@@ -33,9 +35,9 @@ const HomeLayout = ({ children }) => {
   }
 
   window.addEventListener("load", () => checkWindowSize(true));
-
   window.addEventListener("resize", () => checkWindowSize());
 
+  // returns
   return (
     <Layout className="layout">
       <Header
