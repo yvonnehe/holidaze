@@ -90,7 +90,7 @@ const Places = () => {
                       />
                     </div>
                   </Col>
-                  <Col sm={(24, { justify: "center" })} lg={11}>
+                  <Col sm={(24, { justify: "center" })} lg={11} flex="auto">
                     <Link
                       to={`/places-to-stay/${hotel.id}`}
                       className="hotelinfo"
