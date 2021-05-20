@@ -36,6 +36,7 @@ const HomeLayout = ({ children }) => {
 
   window.addEventListener("load", () => checkWindowSize(true));
   window.addEventListener("resize", () => checkWindowSize());
+  window.addEventListener("click", () => checkWindowSize(true));
 
   // returns
   return (
