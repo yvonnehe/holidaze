@@ -7,7 +7,7 @@ import { BASE_URL } from "../utils/constants";
 import Item from "../components/Item";
 import axios from "axios";
 
-// Form to edit hotel imports
+// Form imports to add hotel
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
