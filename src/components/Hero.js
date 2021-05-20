@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Carousel } from "antd";
 import HeroImg1 from "../images/mao-yuqing.jpg";
 import HeroImg2 from "../images/sharon-christina-rorvik.jpg";
 import HeroImg3 from "../images/solveig-smordal-botn.jpg";
 import HeroText from "./HeroText";
 
+// workaround to style hero section
 const Hero = () => {
   const [heroStyle, setHeroStyle] = useState({
     color: "#fff",
@@ -48,6 +49,7 @@ const Hero = () => {
   window.onresize = () => getHeroStyle();
   window.onload = () => getHeroStyle();
 
+  // returns
   return (
     <>
       <Carousel
