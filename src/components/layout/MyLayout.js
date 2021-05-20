@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import logo from "../../images/Holidaze-white-logo.svg";
 import { useContext, useState } from "react";
 import AuthContext from "../../context/AuthContext";
-import Burger from "../../images/Holidaze-blue-burger.svg";
+import Burger2 from "../../images/Holidaze-white-burger.svg";
 const { Header, Footer, Content } = Layout;
 
 const MyLayout = ({ children }) => {
@@ -93,9 +93,9 @@ const MyLayout = ({ children }) => {
         )}
         <img
           className="navToggle"
-          src={Burger}
+          src={Burger2}
           alt="hamburger menu"
-          id="burger"
+          id="burger2"
           onClick={toggleMenu}
         />
       </Header>
