@@ -18,11 +18,10 @@ const Login = () => {
   const [, setAuth] = useContext(AuthContext);
   const history = useHistory();
 
+  // submits login form/handles login
   const onSubmit = async (data) => {
     setSubmitting(true);
     setLoginError(null);
-
-    history.push("/enquiries");
 
     console.log(data);
     try {
@@ -37,9 +36,11 @@ const Login = () => {
       setLoginError(error.toString());
     } finally {
       setSubmitting(false);
+      history.push("/enquiries");
     }
   };
 
+  // returns
   return (
     <>
       <MyLayout>
