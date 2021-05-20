@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Carousel } from "antd";
 import HeroImg1 from "../images/mao-yuqing.jpg";
 import HeroImg2 from "../images/sharon-christina-rorvik.jpg";
@@ -65,10 +65,8 @@ const Hero = () => {
             width="100%"
             className="heroimg"
           />
-          <div className="carouselwrapper">
-            <div style={heroStyle}>
-              <HeroText />
-            </div>
+          <div style={heroStyle}>
+            <HeroText />
           </div>
         </div>
         <div>
@@ -78,10 +76,8 @@ const Hero = () => {
             width="100%"
             className="heroimg"
           />
-          <div className="carouselwrapper">
-            <div style={heroStyle}>
-              <HeroText />
-            </div>
+          <div style={heroStyle}>
+            <HeroText />
           </div>
         </div>
         <div>
@@ -91,10 +87,8 @@ const Hero = () => {
             width="100%"
             className="heroimg"
           />
-          <div className="carouselwrapper">
-            <div style={heroStyle}>
-              <HeroText />
-            </div>
+          <div style={heroStyle}>
+            <HeroText />
           </div>
         </div>
       </Carousel>
