@@ -19,6 +19,7 @@ const hotelSchema = yup.object().shape({
   shortdescription: yup.string().required("Please provide a short description"),
   description: yup.string().required("Please provide a description"),
   extras: yup.string().required("Please provide extras"),
+  distance: yup.number().required("Please provide a distance"),
   img: yup.string().required("Please provide an image url"),
 });
 
@@ -116,6 +117,14 @@ const AddHotel = () => {
                     <input name="extras" ref={register} />
                   </label>
                   {errors.extras && <p>{errors.extras.message}</p>}
+                </div>
+                <div>
+                  <label>
+                    Distance from Bergen city centre in km
+                    <br></br>
+                    <input name="distance" ref={register} />
+                  </label>
+                  {errors.distance && <p>{errors.distance.message}</p>}
                 </div>
                 <div>
                   <label>
