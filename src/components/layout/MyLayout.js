@@ -12,11 +12,13 @@ const MyLayout = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [prevWindowSize, setPrevWindowSize] = useState(window.innerWidth);
 
+  // push back to home if log out
   function logout() {
     setAuth(null);
     history.push("/");
   }
 
+  // responsive menu
   function toggleMenu() {
     setShowMenu(!showMenu);
   }
@@ -32,20 +34,20 @@ const MyLayout = ({ children }) => {
   }
 
   window.addEventListener("load", () => checkWindowSize(true));
-
   window.addEventListener("resize", () => checkWindowSize());
 
+  // returns
   return (
-    <Layout className="layout">
+    <Layout className="layout2">
       <Header
-        className={showMenu ? "header-menu" : "header"}
+        className={showMenu ? "header2-menu" : "header2"}
         style={{
           backgroundColor: "#2A384C",
           display: "flex",
           justifyContent: "Space-between",
         }}
       >
-        <Link to="/">
+        <Link to="/" className="navLogo2">
           <div className="logo">
             <img src={logo} alt="Holidaze logo" width={140} />
           </div>

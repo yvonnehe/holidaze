@@ -14,6 +14,12 @@
     @extend .header;
   }
 }
+.header2 {
+  position: relative;
+  &-menu {
+    @extend .header2;
+  }
+}
 
 @media screen and (min-width: 1600px) {
   .site-layout-content {
@@ -39,6 +45,10 @@
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
+  .layout2 {
+    background-color: #2a384c;
+    margin-top: 60px;
+  }
   .header {
     flex-direction: column;
     flex-wrap: nowrap;
@@ -54,7 +64,26 @@
     backdrop-filter: blur(4px);
     &-menu {
       @extend .header;
-      padding-bottom: 30px;
+      padding-top: 20px;
+      padding-bottom: 50px;
+    }
+  }
+  .header2 {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+    justify-content: space-between;
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #2a384c;
+    &-menu {
+      @extend .header2;
+      padding-bottom: 50px;
+      padding-top: 20px;
+      height: fit-content;
     }
   }
   .logbutton {
@@ -67,6 +96,7 @@
     margin-top: 40px;
     display: none;
     flex-direction: column;
+    margin-bottom: 20px;
     &-menu {
       @extend .links;
       display: flex;
@@ -75,12 +105,17 @@
   .navLogo {
     position: absolute;
     top: 0;
-    left: 20px;
+    left: 40px;
+  }
+  .navLogo2 {
+    position: absolute;
+    top: 0;
+    left: 40px;
   }
   .navToggle {
     position: absolute;
-    top: 7px;
-    right: 10px;
+    top: 10px;
+    right: 40px;
     z-index: 5;
   }
   #burger,
@@ -88,5 +123,3 @@
     display: inline;
   }
 }
-
-//transition delay ease in
