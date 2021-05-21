@@ -62,9 +62,9 @@ const AddHotel = () => {
     }
   };
 
-  // returns + if no auth push user back to home
+  // returns + if no auth push user back to login
   if (!auth) {
-    history.push("/");
+    history.push("/login");
   } else
     return (
       <>

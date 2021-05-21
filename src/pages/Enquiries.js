@@ -18,7 +18,7 @@ const Enquiries = () => {
 
   // push back if not logged in
   if (!auth) {
-    history.push("/");
+    history.push("/login");
   }
 
   // fetch enquiries from contact page
