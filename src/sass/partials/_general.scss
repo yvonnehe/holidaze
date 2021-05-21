@@ -55,7 +55,13 @@ a:hover {
 
 .loglink {
   color: #2a384c;
+  &:hover {
+    color: #e7eef5;
+  }
   &--light {
     color: #e7eef5;
+    &:hover {
+      color: #2a384c;
+    }
   }
 }
