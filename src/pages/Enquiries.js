@@ -81,8 +81,8 @@ const Enquiries = () => {
                 console.log(booking);
 
                 return (
-                  <div key={booking.id} className="contactcon">
-                    <p className="bold">{booking.name}</p>
+                  <div key={booking.id} className="bookingcon">
+                    <p className="bookingname">{booking.name}</p>
                     <p>{booking.guests} guests</p>
                     <p>
                       {
@@ -108,7 +108,7 @@ const Enquiries = () => {
 
                 return (
                   <div key={contact.id} className="contactcon">
-                    <p className="bold">{contact.Name}</p>
+                    <p className="contactname">{contact.Name}</p>
                     <p>{contact.Email}</p>
                     <p>{contact.Subject}</p>
                     <p>{contact.Message}</p>
