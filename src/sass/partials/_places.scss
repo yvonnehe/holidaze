@@ -9,7 +9,7 @@
   padding-top: 5px;
 }
 
-.titlesearch {
+.titlefilter {
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
@@ -83,19 +83,19 @@
   .text {
     margin-top: 20px;
   }
-  .searchdiv {
+  .filteritem {
     text-align: left;
   }
 }
 
 @media screen and (max-width: 420px) {
-  .titlesearch {
+  .titlefilter {
     flex-direction: column;
   }
   .filterdiv {
     margin: 0 auto;
   }
-  .searchdiv {
+  .filteritem {
     text-align: center;
   }
 }

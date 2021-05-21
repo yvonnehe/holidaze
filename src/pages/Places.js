@@ -51,7 +51,7 @@ const Places = () => {
     return (
       <>
         <MyLayout>
-          <div className="titlesearch">
+          <div className="titlefilter">
             <Heading heading="Places to stay" />
             <div className="filterdiv">
               <input
@@ -64,7 +64,7 @@ const Places = () => {
               {showSearchOptions &&
                 filteredHotels.map((hotel) => {
                   return (
-                    <div key={hotel.id} className="searchdiv">
+                    <div key={hotel.id} className="filteritem">
                       <Link
                         to={`/places-to-stay/${hotel.id}`}
                         className="hotelinfo"
