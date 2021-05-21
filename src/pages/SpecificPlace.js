@@ -122,7 +122,7 @@ const SpecificPlace = () => {
               <img
                 src={hotel.img}
                 alt={hotel.name}
-                className="shotelimg"
+                className="splaceimg"
                 style={{ width: "100%" }}
               />
             </Col>
