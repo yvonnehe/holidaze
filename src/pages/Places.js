@@ -80,7 +80,7 @@ const Places = () => {
             return (
               <div key={hotel.id} className="hoteldiv">
                 <Row gutter={[16, 16]}>
-                  <Col sm={(24, { justify: "center" })} lg={9}>
+                  <Col sm={24} lg={9}>
                     <div>
                       <img
                         src={hotel.img}
@@ -90,7 +90,7 @@ const Places = () => {
                       />
                     </div>
                   </Col>
-                  <Col sm={(24, { justify: "center" })} lg={11} flex="auto">
+                  <Col sm={24} lg={11} flex="auto">
                     <Link
                       to={`/places-to-stay/${hotel.id}`}
                       className="hotelinfo"
@@ -105,7 +105,7 @@ const Places = () => {
                       </p>
                     </Link>
                   </Col>
-                  <Col sm={(24, { justify: "center" })} lg={4}>
+                  <Col sm={24} lg={4}>
                     <Link
                       to={`/places-to-stay/${hotel.id}`}
                       className="hotelinfo"
