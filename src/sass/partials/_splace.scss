@@ -9,7 +9,7 @@
 .bookingdiv {
   width: 250px;
   margin-top: 30px;
-  &--center {
+  &--bold {
     font-weight: 500;
   }
 }
@@ -18,14 +18,14 @@
 @media screen and (max-width: 575px) {
   .bookingdiv {
     margin: 0 auto;
+    &__price {
+      margin-top: 30px;
+    }
   }
   .site-input-group-wrapper {
     margin: 0 auto;
   }
   .col2 {
     margin: 10px 0px;
-  }
-  .bookingdiv--price {
-    margin-top: 30px;
   }
 }

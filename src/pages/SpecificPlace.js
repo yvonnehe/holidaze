@@ -137,7 +137,7 @@ const SpecificPlace = () => {
 
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="bookingdiv">
-                  <p className="bookingdiv--center bookingdiv--price">
+                  <p className="bookingdiv--bold bookingdiv__price">
                     {hotel.price} NOK per night
                   </p>
                   <div
@@ -179,7 +179,7 @@ const SpecificPlace = () => {
                     >
                       {success ? "Booking complete!" : "Book now"}
                     </button>
-                    <div className="bookingdiv--center">
+                    <div className="bookingdiv--bold">
                       Total price
                       {formValues.date &&
                         formValues.date[1] &&

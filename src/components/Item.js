@@ -18,15 +18,15 @@ const Item = (props) => {
           </Col>
           <Col sm={24} lg={11}>
             <p className="text">{shortdescription}</p>
-            <h3 className="biggertext">{name}</h3>
+            <h3 className="hotelname">{name}</h3>
             <hr className="line"></hr>
             <br></br>
-            <p className="extras text">{extras}</p>
+            <p className="hotelextras text">{extras}</p>
             <p className="text">{distance}km from Bergen city centre</p>
           </Col>
           <Col sm={24} lg={4}>
-            <p className="price biggertext">{price} NOK</p>
-            <p className="taxes text">Per night including taxes</p>
+            <p className="hotelprice">{price} NOK</p>
+            <p className="hoteltaxes text">Per night including taxes</p>
           </Col>
         </Row>
       </div>

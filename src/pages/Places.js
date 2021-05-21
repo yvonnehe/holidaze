@@ -96,10 +96,10 @@ const Places = () => {
                       className="hotelinfo"
                     >
                       <p className="text">{hotel.shortdescription}</p>
-                      <h3 className="biggertext">{hotel.name}</h3>
+                      <h3 className="hotelname">{hotel.name}</h3>
                       <hr className="line"></hr>
                       <br></br>
-                      <p className="extras text">{hotel.extras}</p>
+                      <p className="hotelextras text">{hotel.extras}</p>
                       <p className="text">
                         {hotel.distance}km from Bergen city centre
                       </p>
@@ -110,8 +110,10 @@ const Places = () => {
                       to={`/places-to-stay/${hotel.id}`}
                       className="hotelinfo"
                     >
-                      <p className="price biggertext">{hotel.price} NOK</p>
-                      <p className="taxes text">Per night including taxes</p>
+                      <p className="hotelprice">{hotel.price} NOK</p>
+                      <p className="hoteltaxes text">
+                        Per night including taxes
+                      </p>
                     </Link>
                   </Col>
                 </Row>
