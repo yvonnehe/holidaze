@@ -1,3 +1,21 @@
+// search styles
+.filter {
+  border: none;
+  border-bottom: 1px solid #2a384c;
+}
+
+.filterdiv {
+  width: 150px;
+  padding-top: 5px;
+}
+
+.titlesearch {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+// Places styles
 .hoteldiv {
   max-width: 100%;
   margin-bottom: 25px;
@@ -15,22 +33,6 @@
 .hotelinfo {
   color: inherit;
   line-height: 1;
-}
-
-.filter {
-  border: none;
-  border-bottom: 1px solid #2a384c;
-}
-
-.filterdiv {
-  width: 150px;
-  padding-top: 5px;
-}
-
-.titlesearch {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 10px;
 }
 
 .biggertext {
@@ -62,6 +64,7 @@
   margin-top: 10px;
 }
 
+// Responsive styles
 @media screen and (max-width: 575px) {
   .price,
   .taxes,

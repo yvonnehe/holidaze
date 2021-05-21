@@ -1,3 +1,4 @@
+// General hero styles
 h1 {
   color: white;
   font-weight: 800;
@@ -11,6 +12,7 @@ h1 {
   object-fit: cover;
 }
 
+// Media queries for hero, workaround to make it responsive
 @media screen and (max-width: 800px) {
   h1 {
     font-size: 40px;

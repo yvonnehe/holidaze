@@ -1,3 +1,4 @@
+// Navigation styles
 #burger,
 #burger2 {
   width: 45px;
@@ -21,6 +22,7 @@
   }
 }
 
+// Responsive layout styles for bigger screens
 @media screen and (min-width: 1600px) {
   .site-layout-content {
     margin: 0 50px;
@@ -33,12 +35,14 @@
   }
 }
 
+// Responsive layout styles for smaller screens
 @media screen and (max-width: 575px) {
   .site-layout-content {
     text-align: center;
   }
 }
 
+// Responsive navigation styles
 @media screen and (max-width: 875px) {
   .layout {
     background-color: #fff;
