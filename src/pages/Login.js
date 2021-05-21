@@ -50,23 +50,17 @@ const Login = () => {
             {loginError && <p>{loginError}</p>}
             <fieldset disabled={submitting}>
               <div>
-                <label>
-                  Username
-                  <br></br>
-                  <input name="identifier" ref={register} />
-                </label>
+                <label>Username</label>
+                <input name="identifier" ref={register} />
                 <br></br>
                 {errors.identifier && <span>{errors.identifier.message}</span>}
-                <label>
-                  Password
-                  <br></br>
-                  <input
-                    type="password"
-                    name="password"
-                    ref={register}
-                    id="passwordinput"
-                  />
-                </label>
+                <label>Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  ref={register}
+                  id="passwordinput"
+                />
                 {errors.password && <p>{errors.password.message}</p>}
               </div>
               <button className="formbutton" type="submit">

@@ -75,58 +75,39 @@ const Contact = () => {
                   display: "inline-block",
                   width: "50%",
                   paddingRight: "2.5%",
-                  marginBottom: "-20px",
                 }}
               >
-                <label>
-                  Name
-                  <br></br>
-                  <input name="Name" ref={register} />
-                </label>
+                <label>Name</label>
+                <input name="Name" ref={register} />
                 {errors.Name && <span>{errors.Name.message}</span>}
               </div>
-
               <div
                 style={{
                   display: "inline-block",
                   width: "50%",
                   paddingLeft: "2.5%",
-                  marginBottom: "-20px",
                 }}
               >
-                <label>
-                  E-mail
-                  <br></br>
-                  <input name="Email" ref={register} />
-                </label>
+                <label>E-mail</label>
+                <input name="Email" ref={register} />
                 {errors.Email && <span>{errors.Email.message}</span>}
               </div>
-              <br></br>
-              <br></br>
-              <label>
-                What is this regarding?
-                <br></br>
-                <select
-                  name="Subject"
-                  ref={register}
-                  defaultChecked="booking"
-                  defaultValue="booking"
-                >
-                  <option value="booking">Booking</option>
-                  <option value="cancellation">Cancellation</option>
-                  <option value="activities">Activities</option>
-                  <option value="other">Other</option>
-                </select>
-              </label>
-              <br></br>
+              <label>What is this regarding?</label>
+              <select
+                name="Subject"
+                ref={register}
+                defaultChecked="booking"
+                defaultValue="booking"
+              >
+                <option value="booking">Booking</option>
+                <option value="cancellation">Cancellation</option>
+                <option value="activities">Activities</option>
+                <option value="other">Other</option>
+              </select>
               {errors.Subject && <span>{errors.Subject.message}</span>}
 
-              <label>
-                Your message
-                <br></br>
-                <textarea name="Message" ref={register} />
-              </label>
-              <br></br>
+              <label>Your message</label>
+              <textarea name="Message" ref={register} />
               {errors.Message && <span>{errors.Message.message}</span>}
 
               <button className="formbutton" type="submit">

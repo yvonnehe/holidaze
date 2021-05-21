@@ -77,53 +77,35 @@ const AddHotel = () => {
               {postError && <p>{postError}</p>}
               <fieldset disabled={submitting}>
                 <div>
-                  <label>
-                    Hotel name
-                    <br></br>
-                    <input name="name" ref={register} />
-                  </label>
+                  <label>Hotel name</label>
+                  <input name="name" ref={register} />
                   {errors.name && <p>{errors.name.message}</p>}
                 </div>
                 <div>
-                  <label>
-                    Price
-                    <br></br>
-                    <input name="price" ref={register} type="number" />
-                  </label>
+                  <label>Price</label>
+                  <input name="price" ref={register} type="number" />
                   {errors.price && <p>{errors.price.message}</p>}
                 </div>
                 <div>
-                  <label>
-                    Short description
-                    <br></br>
-                    <input name="shortdescription" ref={register} />
-                  </label>
+                  <label>Short description</label>
+                  <input name="shortdescription" ref={register} />
                   {errors.shortdescription && (
                     <p>{errors.shortdescription.message}</p>
                   )}
                 </div>
                 <div>
-                  <label>
-                    Description (only visible on specific page)
-                    <br></br>
-                    <textarea name="description" ref={register} type="text" />
-                  </label>
+                  <label>Description (only visible on specific page)</label>
+                  <textarea name="description" ref={register} type="text" />
                   {errors.description && <p>{errors.description.message}</p>}
                 </div>
                 <div>
-                  <label>
-                    Extras (use a dash - between the extras)
-                    <br></br>
-                    <input name="extras" ref={register} />
-                  </label>
+                  <label>Extras (use a dash - between the extras)</label>
+                  <input name="extras" ref={register} />
                   {errors.extras && <p>{errors.extras.message}</p>}
                 </div>
                 <div>
-                  <label>
-                    Distance from Bergen city centre in km
-                    <br></br>
-                    <input name="distance" ref={register} />
-                  </label>
+                  <label>Distance from Bergen city centre in km</label>
+                  <input name="distance" ref={register} />
                   {errors.distance && <p>{errors.distance.message}</p>}
                 </div>
                 <div>
