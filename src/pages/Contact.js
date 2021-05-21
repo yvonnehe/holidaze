@@ -70,24 +70,12 @@ const Contact = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             {postError && <p>{postError}</p>}
             <fieldset disabled={submitting}>
-              <div
-                style={{
-                  display: "inline-block",
-                  width: "50%",
-                  paddingRight: "2.5%",
-                }}
-              >
+              <div className="formhalf1">
                 <label>Name</label>
                 <input name="Name" ref={register} />
                 {errors.Name && <span>{errors.Name.message}</span>}
               </div>
-              <div
-                style={{
-                  display: "inline-block",
-                  width: "50%",
-                  paddingLeft: "2.5%",
-                }}
-              >
+              <div className="formhalf2">
                 <label>E-mail</label>
                 <input name="Email" ref={register} />
                 {errors.Email && <span>{errors.Email.message}</span>}
