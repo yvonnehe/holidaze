@@ -25,7 +25,7 @@ const schema = yup.object().shape({
     .required("Please fill in a date"),
 });
 
-const Shotel = () => {
+const SpecificPlace = () => {
   const { id } = useParams();
   const [hotel, setHotel] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -200,4 +200,4 @@ const Shotel = () => {
     );
 };
 
-export default Shotel;
+export default SpecificPlace;
