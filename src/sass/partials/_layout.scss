@@ -5,6 +5,7 @@
   display: none;
 }
 .logbutton {
+  margin-left: auto;
   &-menu {
     @extend .logbutton;
   }
@@ -19,6 +20,15 @@
   position: relative;
   &-menu {
     @extend .header2;
+  }
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  &-menu {
+    @extend .links;
   }
 }
 
@@ -102,6 +112,7 @@
     display: none;
     flex-direction: column;
     margin-bottom: 20px;
+    width: 100%;
     &-menu {
       @extend .links;
       display: flex;

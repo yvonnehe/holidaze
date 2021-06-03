@@ -28,7 +28,7 @@ const MyLayout = ({ children }) => {
       (window.innerWidth > 875 && prevWindowSize < 875) ||
       (onload && window.innerWidth > 875)
     ) {
-      setShowMenu(true);
+      //setShowMenu(true);
     }
     setPrevWindowSize(window.innerWidth);
   }
@@ -86,14 +86,12 @@ const MyLayout = ({ children }) => {
               </Link>
             </>
           )}
-        </div>
-        {showMenu && (
           <button className="logbutton" onClick={logout} type="button">
             <Link className="loglink" to="/login" onClick={auth && logout}>
               {auth ? "Log out" : "Log in"}
             </Link>
           </button>
-        )}
+        </div>
         <img
           className="navToggle"
           src={Burger2}
